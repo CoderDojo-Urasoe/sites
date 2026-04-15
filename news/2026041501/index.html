@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webサイトをリニューアル！ | CoderDojo浦添</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Outfit:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 120px auto 60px;
+      padding: 0 1.5rem;
+    }
+    .article-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .article-meta {
+      color: var(--color-gray);
+      font-family: var(--font-en);
+      margin-bottom: 0.5rem;
+    }
+    .article-image {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      box-shadow: var(--glass-shadow);
+    }
+    .article-body {
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    .text-center { text-align: center; margin-top: 3rem; }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- ナビゲーション -->
+    <nav class="navbar glass">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../index.html#about">CoderDojoとは</a></li>
+        <li><a href="../../index.html#gallery">どんなことやるの？</a></li>
+        <li><a href="../../index.html#faq">FAQ</a></li>
+        <li><a href="https://forms.gle/Eprh64LG7AdSkBYr6" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <main class="article-container fade-in-up visible">
+      <header class="article-header">
+        <div class="article-meta">2026.04.15 | お知らせ</div>
+        <h1>Webサイトをリニューアル！</h1>
+      </header>
+
+      <img src="../../img/news_renewal.png" alt="Webサイトリニューアル" class="article-image">
+
+      <div class="article-body">
+        <p>Webサイトが新しくなりました。</p>
+        <p>過去の記事は見えるようにしていきますので、少々お待ちください。</p>
+        <p>お問い合わせは<a href="https://forms.gle/Eprh64LG7AdSkBYr6" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">こちら</a>にお願いします。</p>
+      </div>
+
+      <div class="text-center">
+        <a href="../../index.html" class="btn-secondary">トップページへ戻る</a>
+      </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo">
+          </div>
+          <p>子どもたちのための無料プログラミングクラブ</p>
+          <div class="footer-links">
+            <a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer" class="footer-sns-link">
+              <img src="../../img/coderdojo_urasoe_LINE_QR.png" alt="LINE QR" class="qr-footer">
+              LINE
+            </a>
+            <a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

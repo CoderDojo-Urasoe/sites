@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoderDojo浦添 | 子ども向けプログラミング道場</title>
+  <meta name="description" content="CoderDojo浦添は、子ども向けの無料プログラミングクラブです。Scratchやマインクラフトなどを使って楽しくプログラミングを学びます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Outfit:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" href="./img/logo.png">
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <!-- 旧サイトからのリダイレクト処理 -->
+  <script>
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('p') === '7449') {
+        window.location.href = './news/20260411/index.html';
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- ナビゲーション -->
+    <nav class="navbar glass">
+      <div class="logo">
+        <a href="index.html">
+          <img src="./img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">CoderDojoとは</a></li>
+        <li><a href="#gallery">どんなことやるの？</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://forms.gle/Eprh64LG7AdSkBYr6" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ヒーローセクション（スライドショー背景） -->
+    <header class="hero">
+      <div id="hero-slideshow" class="hero-slideshow">
+        <!-- JSでスライドが挿入されます -->
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content fade-in-up delay-1 text-center">
+        <h1 class="hero-title">
+          Give it a try!!
+        </h1>
+        <p class="hero-subtitle">
+          CoderDojo浦添はデジタル創作を楽しむ無料の非営利コミュニティです。
+        </p>
+        <div class="hero-actions center-actions">
+          <a href="./news/20260411/index.html" class="btn-primary">浦添市デジタル人材育成事業</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Newsセクション -->
+    <section id="news" class="section">
+      <div class="container fade-in-up">
+        <div class="section-header">
+          <h2 class="section-title">News</h2>
+          <p class="section-desc">お知らせ</p>
+        </div>
+        <div class="news-list">
+          <a href="./news/2026041501/index.html" class="news-item">
+            <span class="news-date">2026.04.15</span>
+            <span class="news-category tag-info">お知らせ</span>
+            <span class="news-title">Webサイトをリニューアル！</span>
+          </a>
+          <a href="./news/20260411/index.html" class="news-item">
+            <span class="news-date">2026.04.11</span>
+            <span class="news-category tag-info">お知らせ</span>
+            <span class="news-title">2026年度浦添市デジタル人材育成事業の募集を開始しました</span>
+          </a>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  <!-- Aboutセクション -->
+  <section id="about" class="section">
+    <div class="container fade-in-up">
+      <div class="section-header">
+        <h2 class="section-title">What is CoderDojo?</h2>
+        <p class="section-desc">CoderDojo（コーダー道場）とは？</p>
+      </div>
+      <p class="about-intro">
+        CoderDojo
+        は2011年にアイルランドではじまった、世界的な子ども向けプログラミング・コミュニティです。主に7〜17歳の子どもたちを対象とし、世界では2018年5月時点で、85カ国・1,600箇所、日本では全国に140箇所以上の拠点で活動が行われています。
+      </p>
+      <div class="grid features">
+        <div class="feature-card glass-card">
+          <div class="feature-icon bg-green">Free</div>
+          <div class="feature-content">
+            <h3>参加無料</h3>
+            <p>子供たちからは一切お金を取らず、運営はボランティア。企業や個人からの寄付で支えられています。</p>
+          </div>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon bg-orange">Global</div>
+          <div class="feature-content">
+            <h3>世界的な広がり</h3>
+            <p>アイルランドから世界中へ。現在では85カ国以上で1,600を超える道場が活発に活動しています。</p>
+          </div>
+        </div>
+        <div class="feature-card glass-card">
+          <div class="feature-icon bg-blue">Ninjas</div>
+          <div class="feature-content">
+            <h3>対象年齢</h3>
+            <p>主に7〜17歳の子どもたちが対象です。自ら学び、創り、共有する「道場」という場を提供しています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ギャラリー（活動内容）セクション -->
+  <section id="gallery" class="section bg-light">
+    <div class="container fade-in-up">
+      <div class="section-header">
+        <h2 class="section-title">Activities</h2>
+        <p class="section-desc">例えばこんなことを楽しみます</p>
+      </div>
+      <div class="grid gallery-grid">
+        <div class="gallery-card glass-card">
+          <div class="gallery-img" style="background-image: url('./img/slides/slide_24.jpg');"></div>
+          <div class="gallery-info">
+            <h3>プログラミング体験</h3>
+            <p>Scratchを使ったはじめての作品創りや、プログラミング言語を学んだりしています。</p>
+          </div>
+        </div>
+        <div class="gallery-card glass-card">
+          <div class="gallery-img" style="background-image: url('./img/slides/slide_50.jpg');"></div>
+          <div class="gallery-info">
+            <h3>イベントの企画と開催</h3>
+            <p>みんなでイベントを企画して実行したり、いろんなコンテストへ応募したりします。</p>
+          </div>
+        </div>
+        <div class="gallery-card glass-card">
+          <div class="gallery-img" style="background-image: url('./img/slides/slide_43.jpg');"></div>
+          <div class="gallery-info">
+            <h3>AIでアプリ開発！</h3>
+            <p>AIの基礎的な使い方から、本格的なアプリやゲーム創りにチャレンジします。</p>
+          </div>
+        </div>
+        <div class="gallery-card glass-card">
+          <div class="gallery-img" style="background-image: url('./img/slides/slide_41.jpg');"></div>
+          <div class="gallery-info">
+            <h3>デジタル以外の学びも！</h3>
+            <p>動画でレシピと調理法を学んでキャンプ飯会を開催したり、外に出て探究学習をしたり、デジタルだけではない楽しい体験を企画しています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQセクション -->
+  <section id="faq" class="section">
+    <div class="container fade-in-up">
+      <div class="section-header">
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-desc">よくあるご質問</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item glass-card">
+          <summary>プログラミングの経験が全くありませんが大丈夫ですか？</summary>
+          <div class="faq-content">
+            <p>はい、全く問題ありません。Scratchなどの分かりやすいツールから始められますし、メンター（ボランティアのサポートスタッフ）が優しくサポートします。</p>
+          </div>
+        </details>
+        <details class="faq-item glass-card">
+          <summary>対象年齢は何歳ですか？</summary>
+          <div class="faq-content">
+            <p>主に7歳から17歳までを対象としています。年齢に合わせた様々なツールが利用できます。</p>
+          </div>
+        </details>
+        <details class="faq-item glass-card">
+          <summary>持ち物は何が必要ですか？</summary>
+          <div class="faq-content">
+            <p>Wi-Fiに接続可能なノートパソコンが必要です。マウスもあると操作しやすくなります。</p>
+          </div>
+        </details>
+        <details class="faq-item glass-card">
+          <summary>親も同伴した方が良いですか？</summary>
+          <div class="faq-content">
+            <p>小学生までの参加者の場合は、保護者の方の同伴をお願いしております。中学生以上はお一人での参加も可能です。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="./img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo">
+        </div>
+        <p>子どもたちのための無料プログラミングクラブ</p>
+        <div class="footer-links">
+          <a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer" class="footer-sns-link">
+            <img src="img/coderdojo_urasoe_LINE_QR.png" alt="LINE QR" class="qr-footer">
+            LINE
+          </a>
+          <a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <script src="./js/main.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</body>
+
+</html>
