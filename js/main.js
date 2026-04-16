@@ -54,29 +54,53 @@ document.addEventListener('DOMContentLoaded', () => {
   const slideshowContainer = document.getElementById('hero-slideshow');
   if (slideshowContainer) {
     const slideCount = 59;
+    const slideIndices = Array.from({ length: slideCount }, (_, i) => i + 1);
+
+    // Shuffle indices for random order
+    for (let i = slideIndices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [slideIndices[i], slideIndices[j]] = [slideIndices[j], slideIndices[i]];
+    }
+
     const slides = [];
 
     // スライド要素の作成
-    for (let i = 1; i <= slideCount; i++) {
-        const slide = document.createElement('div');
-        slide.className = 'slide';
-        // 18番目だけPNG、他はJPG
-        const ext = i === 18 ? 'png' : 'jpg';
-        const slideNum = String(i).padStart(2, '0');
-        slide.style.backgroundImage = `url('./img/slides/slide_${slideNum}.${ext}')`;
-        slideshowContainer.appendChild(slide);
-        slides.push(slide);
-    }
+    slideIndices.forEach(i => {
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+      const ext = i === 18 ? 'png' : 'jpg';
+      const slideNum = String(i).padStart(2, '0');
+      slide.style.backgroundImage = `url('./img/slides/slide_${slideNum}.${ext}')`;
+      slideshowContainer.appendChild(slide);
+      slides.push(slide);
+    });
 
     let currentSlide = 0;
     slides[currentSlide].classList.add('active');
 
-    // スライドの切り替え
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 5000); // 5秒ごとに切り替え
+    const updateSlide = (index) => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      resetInterval();
+    };
+
+    // Manual Navigation
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (prevBtn) prevBtn.addEventListener('click', () => updateSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => updateSlide(currentSlide + 1));
+
+    // スライドの自動切り替え
+    let slideInterval;
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => {
+        updateSlide(currentSlide + 1);
+      }, 6000); // 6秒ごとに切り替え
+    }
+    resetInterval();
   }
 
   // Set Current Year in Footer
