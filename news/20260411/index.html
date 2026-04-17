@@ -8,103 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Outfit:wght@400;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/png" href="../../img/favicon.png">
   <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    .article-container {
-      max-width: 800px;
-      margin: 120px auto 60px;
-      padding: 0 1.5rem;
-    }
-
-    .article-header {
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .article-meta {
-      color: var(--color-gray);
-      font-family: var(--font-en);
-      margin-bottom: 0.5rem;
-    }
-
-    .lead-box {
-      background: var(--color-bg-light);
-      padding: 2rem;
-      border-radius: 20px;
-      margin-bottom: 2rem;
-      border-left: 5px solid var(--color-primary);
-    }
-
-    .lead-title {
-      font-weight: 800;
-      font-size: 1.4rem;
-      color: var(--color-primary);
-      margin-bottom: 1rem;
-    }
-
-    .article-body h2 {
-      margin: 2.5rem 0 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--color-bg-light);
-    }
-
-    .info-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      margin-bottom: 2rem;
-      box-shadow: var(--glass-shadow);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .info-label {
-      font-weight: 700;
-      color: var(--color-gray);
-    }
-
-    .target-section {
-      margin-top: 3rem;
-      padding: 2.5rem;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 20px;
-      border: 1px solid var(--glass-border);
-    }
-
-    .target-section h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      padding: 0.5rem 1rem;
-      border-left: 6px solid var(--color-primary);
-      background: linear-gradient(to right, rgba(255, 107, 107, 0.1), transparent);
-      border-radius: 0 10px 10px 0;
-      color: var(--color-text);
-    }
-
-    .btn-container {
-      margin-top: 1.5rem;
-    }
-
-    .btn-block {
-      display: block;
-      text-align: center;
-      width: 100%;
-    }
-
-    .text-center {
-      text-align: center;
-      margin-top: 3rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -127,8 +34,10 @@
     <main class="article-container fade-in-up visible">
       <header class="article-header">
         <div class="article-meta">2026.04.11 | お知らせ</div>
-        <h1>2026年度浦添市デジタル人材育成事業の募集を開始しました</h1>
+        <h1 class="article-title">2026年度浦添市デジタル人材育成事業の募集を開始しました</h1>
       </header>
+
+      <img src="../../img/news_coding_1.png" alt="子どもたちが楽しくプログラミングを学んでいる様子" class="article-main-visual">
 
       <div class="lead-box">
         <div class="lead-title">AI時代のあたらしい創作活動にチャレンジ！</div>
@@ -159,6 +68,11 @@
             <div>AIの活用、アプリ、ゲーム開発の方法を学び、自身でモクモクと作品を創ったり、仲間とプロジェクトを立ち上げ取り組んだり、そうして創り上げたアプリやゲームをイベントやコンテスト等で発表していく活動です。
             </div>
           </div>
+        </div>
+
+        <div class="article-image-wrapper">
+          <img src="../../img/news_coding_2.png" alt="メンターと一緒に作品を創る子ども" class="article-inline-image">
+          <span class="image-caption">皆であたらしいことを学び合う9ヶ月間です！</span>
         </div>
 
         <div class="target-section">
@@ -192,7 +106,7 @@
         </div>
       </div>
 
-      <div class="text-center">
+      <div class="article-footer">
         <a href="../../index.html" class="btn-secondary">トップページへ戻る</a>
       </div>
     </main>
