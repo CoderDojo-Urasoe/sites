@@ -108,4 +108,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
+
+  // Text Animation for "Give it a try!!" and Section Titles
+  const animateTitles = document.querySelectorAll('.hero-title, .section-title');
+  const colors = [
+    '#ff6b6b', // Coral
+    '#ff9f43', // Orange
+    '#feca57', // Yellow
+    '#1dd1a1', // Green
+    '#48dbfb', // Light Blue
+    '#54a0ff', // Blue
+    '#5f27cd', // Purple
+    '#ff6348'  // Sunset
+  ];
+
+  animateTitles.forEach(title => {
+    const isHero = title.classList.contains('hero-title');
+    const text = title.textContent.trim();
+    title.innerHTML = text.split('').map((char, i) => {
+      const color = colors[i % colors.length];
+      // Hero starts with delay, sections start when parents are visible (handled by CSS)
+      const delay = isHero ? (0.5 + i * 0.08) : (i * 0.05);
+      return `<span style="animation-delay: ${delay}s; color: ${color};">${char}</span>`;
+    }).join('');
+  });
 });
+
