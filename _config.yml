@@ -1,0 +1,7 @@
+# GitHub Pages exclusion rules
+exclude:
+  - tools
+  - work
+  - scratch
+  - node_modules
+  - .gemini

@@ -3,3 +3,9 @@
 node_modules/
 .gemini/
 work/
+docs/
+
+# News-gen Tool Secrets
+tools/news-gen/config/credentials*.json
+tools/news-gen/config/token*.json
+tools/news-gen/.env
