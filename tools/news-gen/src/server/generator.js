@@ -1,11 +1,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 const axios = require('axios');
+const sharp = require('sharp');
 
 /**
  * 記事生成メイン処理
  */
-async function generateArticle(date, title, photos) {
+async function generateArticle(date, title, content, photos, accessToken) {
     const articleDir = path.join(__dirname, '../../../../news', date);
     const imgDir = path.join(articleDir, 'img');
 
@@ -24,20 +25,30 @@ async function generateArticle(date, title, photos) {
         const filePath = path.join(imgDir, fileName);
 
         try {
-            // NOTE: Pickerから取得できるURLはサムネイルの場合が多いですが、
-            // 記事用には十分なサイズであることが多いです。
-            const response = await axios({
+            const requestOptions = {
                 url: photo.url,
                 method: 'GET',
                 responseType: 'stream'
-            });
+            };
+            if (accessToken) {
+                // 画像DL時にアクセストークンを付与する
+                requestOptions.headers = {
+                    'Authorization': `Bearer ${accessToken}`
+                };
+            }
+
+            const response = await axios(requestOptions);
 
             const writer = fs.createWriteStream(filePath);
-            response.data.pipe(writer);
+            // 最大幅1200pxにリサイズし、品質80%のJPEGに変換
+            const resizer = sharp().resize({ width: 1200, withoutEnlargement: true }).jpeg({ quality: 80 });
+
+            response.data.pipe(resizer).pipe(writer);
 
             await new Promise((resolve, reject) => {
                 writer.on('finish', resolve);
                 writer.on('error', reject);
+                resizer.on('error', reject);
             });
 
             photoData.push({
@@ -45,12 +56,13 @@ async function generateArticle(date, title, photos) {
                 path: `./img/${fileName}`
             });
         } catch (err) {
-            console.error(`画像のダウンロードに失敗: ${photo.name}`, err.message);
+            console.error(`画像のダウンロードに失敗: ${photo.filename || fileName}`, err.message);
+            throw new Error(`画像「${fileName}」の処理中にエラーが発生しました: ${err.message}`);
         }
     }
 
     // 3. HTMLの生成
-    await createHtml(articleDir, date, title, photoData);
+    await createHtml(articleDir, date, title, content, photoData);
 
     return { 
         path: articleDir,
@@ -61,7 +73,7 @@ async function generateArticle(date, title, photos) {
 /**
  * HTMLファイルの組み立て
  */
-async function createHtml(dir, date, title, photoData) {
+async function createHtml(dir, date, title, content, photoData) {
     const templatePath = path.join(__dirname, '../../templates/default.html');
     let html = await fs.readFile(templatePath, 'utf-8');
 
@@ -70,6 +82,12 @@ async function createHtml(dir, date, title, photoData) {
     
     html = html.replace(/{{TITLE}}/g, title);
     html = html.replace(/{{DATE}}/g, formattedDate);
+
+    // 本文のサニタイズと改行の変換
+    const safeContent = content 
+        ? content.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')
+        : '';
+    html = html.replace(/{{CONTENT}}/g, safeContent);
 
     // 画像タグの生成（ギャラリー形式）
     const photosHtml = photoData.map(p =>

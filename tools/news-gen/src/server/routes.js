@@ -113,7 +113,7 @@ router.get('/picker/media/:sessionId', async (req, res) => {
 // ========================================================
 router.post('/generate', async (req, res) => {
     try {
-        const { date, title, photos } = req.body;
+        const { date, title, content, photos, accessToken } = req.body;
 
         if (!date || !title) {
             return res.status(400).json({ error: '日付とタイトルは必須です。' });
@@ -124,7 +124,7 @@ router.post('/generate', async (req, res) => {
         }
 
         console.log(`生成リクエスト: 日付=${date}, タイトル=${title}, 写真数=${photos.length}`);
-        const result = await generateArticle(date, title, photos);
+        const result = await generateArticle(date, title, content, photos, accessToken);
 
         res.json({
             success: true,

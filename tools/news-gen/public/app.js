@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const date = document.getElementById('article-date').value;
         const title = document.getElementById('article-title').value;
+        const content = document.getElementById('article-content').value;
 
         if (!/^\d{8}$/.test(date)) {
             showStatus('⚠️ 日付は YYYYMMDD 形式（例: 20190804）で入力してください。', 'error');
@@ -196,7 +197,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch('/api/generate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ date, title, photos: selectedPhotos })
+                body: JSON.stringify({ date, title, content, photos: selectedPhotos, accessToken })
             });
 
             const result = await response.json();
