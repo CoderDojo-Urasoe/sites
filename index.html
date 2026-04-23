@@ -26,9 +26,27 @@
   <!-- 旧サイトからのリダイレクト処理 -->
   <script>
     (function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('p') === '7449') {
-        window.location.href = './news/20260411/index.html';
+      var targetPath = './news/20260411/index.html';
+      var targetId = '7449';
+
+      var search = window.location.search;
+      if (!search) return;
+
+      if (typeof URLSearchParams !== 'undefined') {
+        var urlParams = new URLSearchParams(search);
+        if (urlParams.get('p') === targetId) {
+          window.location.replace(targetPath);
+        }
+      } else {
+        var query = search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          if (decodeURIComponent(pair[0]) === 'p' && decodeURIComponent(pair[1]) === targetId) {
+            window.location.replace(targetPath);
+            break;
+          }
+        }
       }
     })();
   </script>
