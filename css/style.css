@@ -494,8 +494,12 @@ ul {
   text-align: center;
 }
 
-.tag-event { background-color: var(--color-primary); }
-.tag-info { background-color: var(--color-secondary); }
+.tag-recruitment { background-color: var(--color-accent); }
+.tag-event,
+.tag-announcement { background-color: var(--color-primary); }
+.tag-info,
+.tag-report { background-color: var(--color-secondary); }
+.tag-ended { background-color: #8e8e8e; }
 
 .news-title {
   font-weight: 500;
