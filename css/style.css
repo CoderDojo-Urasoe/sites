@@ -878,6 +878,22 @@ ul {
 }
 
 .lead-box {
+.category-tag {
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-s);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: 0.2rem;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.article-meta .category-tag {
+  color: white;
+}
+
   background-color: var(--color-bg-white);
   padding: var(--space-4);
   border-radius: var(--radius-m);
