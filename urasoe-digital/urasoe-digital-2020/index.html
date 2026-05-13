@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2020年度 浦添プログラミング道場 | 浦添市デジタル人材育成事業</title>
+  <meta name="description" content="2020年度 浦添プログラミング道場の実施概要、活動の様子、成果を紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20260501">
+  <style>
+    .year-hero { margin-top: 80px; min-height: 60vh; display: flex; align-items: flex-end; color: #fff; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,49,75,.86)), var(--hero-image) center / cover; }
+    .year-hero-inner, .year-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .year-hero-inner { padding: 96px 0 64px; }
+    .year-kicker { font-family: var(--font-en), var(--font-ja); font-weight: 800; color: #b7f0ff; margin-bottom: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .year-hero h1 { font-size: clamp(2rem, 4.4vw, 4.2rem); line-height: 1.18; letter-spacing: 0; margin-bottom: 18px; }
+    .year-hero p { max-width: 760px; font-size: 1.08rem; line-height: 1.9; }
+    .year-band { padding: 64px 0; }
+    .year-breadcrumbs { margin-bottom: 24px; color: var(--color-text-sub); font-size: .92rem; }
+    .year-breadcrumbs a { color: var(--color-primary); font-weight: 700; }
+    .year-section-title { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.35; letter-spacing: 0; margin-bottom: 16px; }
+    .year-lead { max-width: 880px; color: var(--color-text-sub); line-height: 1.95; margin-bottom: 28px; }
+    .year-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-summary-card, .year-card, .year-work-card, .year-feature-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .year-summary-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+    .year-summary-body { padding: 18px 20px 22px; }
+    .year-summary-body span { display: block; color: var(--color-primary); font-family: var(--font-en), var(--font-ja); font-weight: 800; font-size: 1.05rem; line-height: 1.2; margin-bottom: 8px; }
+    .year-summary-body strong { display: block; font-size: 1.45rem; line-height: 1.35; margin-bottom: 8px; color: var(--color-text-main); }
+    .year-summary-body p, .year-card p, .year-work-card p, .year-feature-card p { color: var(--color-text-sub); line-height: 1.8; }
+    .year-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .year-card, .year-feature-body { padding: 28px; }
+    .year-card h3, .year-work-card h3, .year-feature-card h3 { font-size: 1.28rem; letter-spacing: 0; margin-bottom: 12px; }
+    .year-list { margin-top: 18px; display: grid; gap: 10px; }
+    .year-list li { list-style: none; padding-left: 18px; position: relative; color: var(--color-text-sub); line-height: 1.75; }
+    .year-list li::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--color-accent); position: absolute; left: 0; top: .72em; }
+    .year-section-visual { margin: 0 0 28px; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-section-visual img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; display: block; }
+    .year-section-visual figcaption { padding: 12px 16px 14px; color: var(--color-text-sub); font-size: .92rem; line-height: 1.7; }
+    .year-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-gallery figure { margin: 0; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-gallery img, .year-work-card img, .year-feature-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .year-gallery figcaption { padding: 12px 14px 14px; color: var(--color-text-sub); font-size: .9rem; line-height: 1.6; }
+    .year-work-grid, .year-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 28px; }
+    .year-work-body { padding: 20px; }
+    .year-emphasis { margin-top: 28px; padding: 28px; background: #fff; border-left: 6px solid var(--color-accent); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-emphasis h3 { font-size: 1.4rem; margin-bottom: 12px; letter-spacing: 0; }
+    .year-emphasis p { color: var(--color-text-sub); line-height: 1.9; }
+    @media (max-width: 900px) { .year-summary, .year-two-column { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar glass"><div class="logo"><a href="../../index.html"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo"></a></div><ul class="nav-links"><li><a href="../index.html">浦添市デジタル人材育成事業</a></li><li><a href="../../index.html#about">CoderDojoとは</a></li><li><a href="../../index.html#faq">FAQ</a></li></ul><button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn"><span></span><span></span><span></span></button></nav>
+    <header class="year-hero" style="--hero-image: url('./images/final-presentation.jpg');"><div class="year-hero-inner"><div class="year-kicker">2020 Report</div><h1>2020年度 浦添プログラミング道場</h1><p>新型コロナウイルス感染症拡大に対応し、オンライン練習期間を経て、オンラインと会場参加を選べるハイブリッド形式で実施されました。</p></div></header>
+    <main>
+      <section class="year-band"><div class="year-inner"><nav class="year-breadcrumbs"><a href="../../index.html">Top</a> &gt; <a href="../index.html">浦添市デジタル人材育成事業</a> &gt; 2020年度</nav><h2 class="year-section-title">事業概要</h2><p class="year-lead">2020年度は、当初4月開始予定だった日程を見直し、4月から5月を準備期間、6月から9月を事前オンライン練習期間、10月から2021年3月を本開催期間として実施しました。参加者はScratchを中心に、Unity、MMD、Minecraftなど、それぞれの関心に応じた作品制作へ取り組みました。</p><div class="year-summary"><article class="year-summary-card"><picture><source srcset="./images/summary-period.webp" type="image/webp"><img src="./images/summary-period.jpg" alt="会場で参加者が制作する様子" loading="lazy"></picture><div class="year-summary-body"><span>実施期間</span><strong>2020年10月10日〜2021年3月27日</strong><p>6月から9月にオンライン練習を行い、10月から本開催へ移行しました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-participants.webp" type="image/webp"><img src="./images/summary-participants.jpg" alt="参加者が作品制作に取り組む様子" loading="lazy"></picture><div class="year-summary-body"><span>参加人数</span><strong>実質参加者 23名</strong><p>30名定員に73名の応募があり、辞退等を除く実質参加者は23名でした。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-content.webp" type="image/webp"><img src="./images/summary-content.jpg" alt="子どもたちの作品制作の様子" loading="lazy"></picture><div class="year-summary-body"><span>実施内容サマリー</span><strong>ハイブリッド開催とScratch作品制作</strong><p>PC・Wi-Fi貸出、オンライン支援、会場参加を組み合わせて学びを継続しました。</p></div></article></div><div class="year-emphasis"><h3>2020年度の特徴</h3><ul class="year-list"><li>外出規制や感染症対策が必要な社会環境のなか、希望家庭へパソコンやWi-Fiルーターを貸し出し、オンラインと対面のハイブリッド型開催を行いました。</li><li>子どもたちの学びの機会を止めず、仲間やメンターと交流できる機会を保つために、オンライン練習や進捗共有の仕組みを試行しました。</li><li>子どもたちの作品には保護者や関係者がレビュー・コメントを寄せ、制作の途中から多くの人と関わる機会を持ちました。</li><li>最終報告会は一般来場者を募集せず、関係者と保護者のみで実施しました。</li></ul></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">実施内容</h2><figure class="year-section-visual"><picture><source srcset="./images/scratch-support.webp" type="image/webp"><img src="./images/scratch-support.jpg" alt="Scratch制作に取り組む参加者をメンターがサポートする様子" loading="lazy"></picture><figcaption>オンラインと会場参加を組み合わせてScratch作品制作に取り組む様子</figcaption></figure><div class="year-two-column"><article class="year-card"><h3>オンライン・ハイブリッド開催</h3><p>家庭の通信環境調査、レンタル機材の手配、オンライン練習を経て、本開催ではオンライン参加と会場参加を随時選べる形で進めました。</p><ul class="year-list"><li>レンタルパソコン: 13名</li><li>モバイルWi-Fiルーター: 3名</li><li>オンラインと会場のハイブリッド形式</li></ul></article><article class="year-card"><h3>作品制作とレビュー</h3><p>Scratchの基礎教材を配布し、進捗をスプレッドシートで共有しながら、ゲーム・アニメーション制作に取り組みました。12月には中間レビュー、3月には最終成果報告会を実施しました。</p><ul class="year-list"><li>Scratch: 26名</li><li>Unity: 1名</li><li>MMD: 1名</li><li>Minecraft: 1名</li></ul></article></div></div></section>
+      
+      <section class="year-band"><div class="year-inner"><h2 class="year-section-title">実施の様子</h2><p class="year-lead">オンラインでの接続練習から会場での制作、レビュー、最終発表まで、状況に合わせて学び方を切り替えながら活動しました。</p><div class="year-gallery"><figure><picture><source srcset="./images/online-orientation.webp" type="image/webp"><img src="./images/online-orientation.jpg" alt="オンラインでのオリエンテーション" loading="lazy"></picture><figcaption>オンラインでのオリエンテーション</figcaption></figure><figure><picture><source srcset="./images/venue-orientation.webp" type="image/webp"><img src="./images/venue-orientation.jpg" alt="会場でのオリエンテーション" loading="lazy"></picture><figcaption>会場でのオリエンテーション</figcaption></figure><figure><picture><source srcset="./images/scratch-support.webp" type="image/webp"><img src="./images/scratch-support.jpg" alt="Scratch制作のサポート" loading="lazy"></picture><figcaption>Scratch制作のサポート</figcaption></figure><figure><picture><source srcset="./images/work-review.webp" type="image/webp"><img src="./images/work-review.jpg" alt="作品レビューに向けた活動" loading="lazy"></picture><figcaption>作品レビューに向けた活動</figcaption></figure><figure><picture><source srcset="./images/hybrid-presentation.webp" type="image/webp"><img src="./images/hybrid-presentation.jpg" alt="オンラインを交えた発表" loading="lazy"></picture><figcaption>オンラインを交えた発表</figcaption></figure><figure><picture><source srcset="./images/final-stage.webp" type="image/webp"><img src="./images/final-stage.jpg" alt="最終成果報告会" loading="lazy"></picture><figcaption>最終成果報告会</figcaption></figure><figure><picture><source srcset="./images/final-presentation.webp" type="image/webp"><img src="./images/final-presentation.jpg" alt="作品発表の様子" loading="lazy"></picture><figcaption>作品発表の様子</figcaption></figure><figure><picture><source srcset="./images/certificate.webp" type="image/webp"><img src="./images/certificate.jpg" alt="修了証授与" loading="lazy"></picture><figcaption>修了証授与</figcaption></figure></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">成果物・発表</h2><p class="year-lead">Scratchを中心にしたゲーム・アニメーション制作を進め、レビューで受けた意見をもとに作品を磨き、最終成果報告会で発表しました。</p><div class="year-work-grid"><article class="year-work-card"><picture><source srcset="./images/scratch-work.webp" type="image/webp"><img src="./images/scratch-work.jpg" alt="Scratchゲーム・アニメーション" loading="lazy"></picture><div class="year-work-body"><h3>Scratchゲーム・アニメーション</h3><p>Scratchを中心に、参加者が自分のアイデアをゲームやアニメーションとして形にしました。</p><p class="mt-2"><a href="https://scratch.mit.edu/studios/27373237/" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-small">関連リンクを見る</a></p></div></article><article class="year-work-card"><picture><source srcset="./images/work-review.webp" type="image/webp"><img src="./images/work-review.jpg" alt="中間レビュー・最終発表" loading="lazy"></picture><div class="year-work-body"><h3>中間レビュー・最終発表</h3><p>保護者や関係者からフィードバックを受け、作品を改善しながら最終成果報告会につなげました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/online-orientation.webp" type="image/webp"><img src="./images/online-orientation.jpg" alt="オンライン学習の運用" loading="lazy"></picture><div class="year-work-body"><h3>オンライン学習の運用</h3><p>クラウド上で進捗を確認し、対面とオンラインの両方で学びを継続しました。</p></div></article></div></div></section>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo"></div><p>子どもたちのための無料プログラミングクラブ</p><div class="footer-links"><a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p></div></div></footer>
+  </div>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

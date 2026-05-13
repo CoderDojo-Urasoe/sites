@@ -5,6 +5,8 @@ node_modules/
 work/
 docs/
 tools/
+# Urasoe digital special-site source materials must stay non-public.
+tools/work/
 # News-gen Tool Secrets
 tools/news-gen/config/credentials*.json
 tools/news-gen/config/token*.json

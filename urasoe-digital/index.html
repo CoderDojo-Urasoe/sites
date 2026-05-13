@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>浦添市デジタル人材育成事業 | CoderDojo浦添</title>
+  <meta name="description" content="CoderDojo浦添が浦添市と連携して実施してきた、浦添市デジタル人材育成事業の実績を年度ごとに紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="stylesheet" href="../css/style.css?v=20260501">
+  <style>
+    .digital-hero {
+      margin-top: 80px;
+      min-height: 56vh;
+      display: flex;
+      align-items: flex-end;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 54, 91, 0.82)),
+        url("./urasoe-digital-2019/images/festival-presentation.jpg") center / cover;
+    }
+
+    .digital-hero-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 96px 0 64px;
+    }
+
+    .digital-kicker {
+      font-family: var(--font-en), var(--font-ja);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #b7f0ff;
+      margin-bottom: 12px;
+    }
+
+    .digital-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 4.6rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+      margin-bottom: 18px;
+    }
+
+    .digital-hero p {
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    .digital-band {
+      padding: 64px 0;
+    }
+
+    .digital-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .digital-recruit {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 28px;
+      border-left: 6px solid var(--color-accent);
+      background: #fff;
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .digital-recruit h2,
+    .digital-section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: 0;
+      margin-bottom: 12px;
+    }
+
+    .digital-section-lead {
+      max-width: 800px;
+      color: var(--color-text-sub);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .digital-stats,
+    .digital-year-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .digital-stats {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+    }
+
+    .digital-stat {
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-m);
+    }
+
+    .digital-stat strong {
+      display: block;
+      color: var(--color-primary);
+      font-size: 2rem;
+      line-height: 1.2;
+      font-family: var(--font-en), var(--font-ja);
+      margin-bottom: 6px;
+    }
+
+    .digital-timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+      border-left: 4px solid var(--color-accent);
+      padding-left: 22px;
+    }
+
+    .digital-timeline-item {
+      position: relative;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .digital-timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 24px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--color-accent);
+    }
+
+    .digital-timeline-item span {
+      display: inline-block;
+      color: var(--color-primary);
+      font-weight: 800;
+      font-family: var(--font-en), var(--font-ja);
+      margin-bottom: 4px;
+    }
+
+    .digital-timeline-item h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      letter-spacing: 0;
+    }
+
+    .digital-timeline-item p {
+      color: var(--color-text-sub);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .digital-year-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .digital-year-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-m);
+      box-shadow: var(--shadow-sm);
+      color: var(--color-text-main);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a.digital-year-card:hover {
+      opacity: 1;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .digital-year-card img,
+    .digital-year-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #e6f6fd, #f7fbff);
+    }
+
+    .digital-year-body {
+      padding: 20px;
+    }
+
+    .digital-year-body span {
+      color: var(--color-primary);
+      font-weight: 800;
+      font-family: var(--font-en), var(--font-ja);
+    }
+
+    .digital-year-body h3 {
+      margin: 6px 0 10px;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+
+    .digital-year-body p {
+      color: var(--color-text-sub);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .is-disabled {
+      opacity: 0.68;
+    }
+
+    @media (max-width: 768px) {
+      .digital-recruit,
+      .digital-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .digital-timeline {
+        padding-left: 18px;
+      }
+
+      .digital-hero {
+        min-height: 64vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <nav class="navbar glass">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../urasoe-digital/">浦添市デジタル人材育成事業</a></li>
+        <li><a href="../index.html#about">CoderDojoとは</a></li>
+        <li><a href="../index.html#join">参加したい方</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <header class="digital-hero">
+      <div class="digital-hero-inner">
+        <div class="digital-kicker">Urasoe Digital Talent Development</div>
+        <h1>浦添市デジタル人材育成事業</h1>
+        <p>2019年度から継続して実施してきた、子どもたちのデジタル創作とプログラミング学習の取り組みを年度ごとに紹介します。</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="digital-band">
+        <div class="digital-inner">
+          <div class="digital-recruit">
+            <div>
+              <h2>2026年度の募集は終了しました</h2>
+              <p>AI時代の学び方に挑戦する2026年度の参加募集は終了しました。募集内容はお知らせページで確認できます。</p>
+            </div>
+            <a href="../news/20260411/index.html" class="btn-primary">募集終了のお知らせを見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="digital-band bg-light">
+        <div class="digital-inner">
+          <h2 class="digital-section-title">事業概要</h2>
+          <p class="digital-section-lead">浦添市デジタル人材育成事業は、浦添市内の18歳未満の子たちに、生成AI、プログラミング、ゲーム・アニメーション制作、ロボコンチャレンジの機会を通して、自身の関心に向き合い、取り組むことを自ら決め、保護者も一緒になって、これからの学びを探究していく、未来の地域を支える人材を支える活動です。</p>
+          <div class="digital-timeline" aria-label="2019年度から2025年度までの事業概要年表">
+            <article class="digital-timeline-item">
+              <span>2019年度</span>
+              <h3>ゲーム・アニメーション制作とロボットプログラミング</h3>
+              <p>初年度は2期制で実施し、作品制作、成果発表、ロボットプログラミングに取り組みました。</p>
+            </article>
+            <article class="digital-timeline-item">
+              <span>2020年度</span>
+              <h3>オンラインと対面を組み合わせたハイブリッド開催</h3>
+              <p>感染症対策のもと、PC・Wi-Fi貸出やオンライン支援を取り入れ、子どもたちの学びを継続しました。</p>
+            </article>
+            <article class="digital-timeline-item">
+              <span>2021年度</span>
+              <h3>PBLと地域プロジェクト</h3>
+              <p>AI、ノーコード、3DCGなどの体験を経て、浦添をテーマにしたチームプロジェクトへ発展しました。</p>
+            </article>
+            <article class="digital-timeline-item">
+              <span>2022年度</span>
+              <h3>デジタル体験と外部連携</h3>
+              <p>Minecraft、ロボット、アプリ開発、コンピュータサイエンスイベントなど、多様な学びを組み合わせました。</p>
+            </article>
+            <article class="digital-timeline-item">
+              <span>2023年度</span>
+              <h3>ロボット部門とアプリ開発部門</h3>
+              <p>WRO沖縄推進委員会と連携し、ロボット競技とアプリ開発・コンテスト挑戦を並行して進めました。</p>
+            </article>
+            <article class="digital-timeline-item">
+              <span>2024年度</span>
+              <h3>WROへの挑戦と親子でデジタル創作</h3>
+              <p>ロボット部門では全国大会へ挑戦し、親子創作では生成AIを使ったLINEスタンプ、電子書籍、アプリ制作に取り組みました。</p>
+            </article>
+            <article class="digital-timeline-item">
+              <span>2025年度</span>
+              <h3>実施内容を整理中</h3>
+              <p>公開用素材と実施記録の確認後、年度ページとして追加予定です。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="digital-band">
+        <div class="digital-inner">
+          <h2 class="digital-section-title">年度別の取り組み</h2>
+          <p class="digital-section-lead">2019年度から2024年度までの実施報告書をもとに、各年度の取り組みを紹介しています。2025年度以降は素材確認後に順次追加します。</p>
+          <div class="digital-year-grid">
+            <a class="digital-year-card" href="./urasoe-digital-2019/">
+              <picture>
+                <source srcset="./urasoe-digital-2019/images/festival-presentation.webp" type="image/webp">
+                <img src="./urasoe-digital-2019/images/festival-presentation.jpg" alt="浦添プログラミングフェスティバルで発表する参加者">
+              </picture>
+              <div class="digital-year-body">
+                <span>2019年度</span>
+                <h3>浦添プログラミング道場</h3>
+                <p>ゲーム・アニメーション制作とロボットプログラミングに取り組んだ初年度の実施内容を紹介します。</p>
+              </div>
+            </a>
+            <a class="digital-year-card" href="./urasoe-digital-2020/">
+              <picture>
+                <source srcset="./urasoe-digital-2020/images/final-presentation.webp" type="image/webp">
+                <img src="./urasoe-digital-2020/images/final-presentation.jpg" alt="2020年度の最終成果報告会で発表する参加者">
+              </picture>
+              <div class="digital-year-body">
+                <span>2020年度</span>
+                <h3>ハイブリッド開催と作品制作</h3>
+                <p>オンラインと会場参加を組み合わせ、Scratchを中心とした作品制作に取り組みました。</p>
+              </div>
+            </a>
+            <a class="digital-year-card" href="./urasoe-digital-2021/">
+              <picture>
+                <source srcset="./urasoe-digital-2021/images/final-group.webp" type="image/webp">
+                <img src="./urasoe-digital-2021/images/final-group.jpg" alt="2021年度の最終報告会の集合写真">
+              </picture>
+              <div class="digital-year-body">
+                <span>2021年度</span>
+                <h3>PBLと地域プロジェクト</h3>
+                <p>ワークショップで技術に触れ、浦添をテーマにしたチームプロジェクトへ発展させました。</p>
+              </div>
+            </a>
+            <a class="digital-year-card" href="./urasoe-digital-2022/">
+              <picture>
+                <source srcset="./urasoe-digital-2022/images/group-photo.webp" type="image/webp">
+                <img src="./urasoe-digital-2022/images/group-photo.jpg" alt="2022年度の活動参加者集合写真">
+              </picture>
+              <div class="digital-year-body">
+                <span>2022年度</span>
+                <h3>デジタル体験と外部挑戦</h3>
+                <p>Minecraft、ロボット、アプリ、CSイベントなど多様な体験とPBLを実施しました。</p>
+              </div>
+            </a>
+            <a class="digital-year-card" href="./urasoe-digital-2023/">
+              <picture>
+                <source srcset="./urasoe-digital-2023/images/final-group.webp" type="image/webp">
+                <img src="./urasoe-digital-2023/images/final-group.jpg" alt="2023年度の最終イベント集合写真">
+              </picture>
+              <div class="digital-year-body">
+                <span>2023年度</span>
+                <h3>ロボット部門とアプリ開発部門</h3>
+                <p>WROやプログラミングコンテストを目指し、高度な制作と発表に取り組みました。</p>
+              </div>
+            </a>
+            <a class="digital-year-card" href="./urasoe-digital-2024/">
+              <picture>
+                <source srcset="./urasoe-digital-2024/images/final-presentation.webp" type="image/webp">
+                <img src="./urasoe-digital-2024/images/final-presentation.jpg" alt="2024年度の最終報告イベントで発表する参加者">
+              </picture>
+              <div class="digital-year-body">
+                <span>2024年度</span>
+                <h3>ロボットと親子デジタル創作</h3>
+                <p>WROへの挑戦と、生成AIを使ったLINEスタンプ・電子書籍・アプリ制作を進めました。</p>
+              </div>
+            </a>
+            <div class="digital-year-card is-disabled">
+              <div class="digital-year-placeholder"></div>
+              <div class="digital-year-body">
+                <span>2025年度</span>
+                <h3>準備中</h3>
+                <p>素材確認後に公開予定です。</p>
+              </div>
+            </div>
+            <div class="digital-year-card is-disabled">
+              <div class="digital-year-placeholder"></div>
+              <div class="digital-year-body">
+                <span>2026年度</span>
+                <h3>募集終了</h3>
+                <p>参加募集は終了しました。実施内容は素材確認後に追加予定です。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo">
+          </div>
+          <p>子どもたちのための無料プログラミングクラブ</p>
+          <div class="footer-links">
+            <a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer">LINE</a>
+            <a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

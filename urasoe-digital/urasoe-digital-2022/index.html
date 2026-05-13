@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2022年度 浦添プログラミング道場 | 浦添市デジタル人材育成事業</title>
+  <meta name="description" content="2022年度 浦添プログラミング道場の実施概要、活動の様子、成果を紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20260501">
+  <style>
+    .year-hero { margin-top: 80px; min-height: 60vh; display: flex; align-items: flex-end; color: #fff; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,49,75,.86)), var(--hero-image) center / cover; }
+    .year-hero-inner, .year-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .year-hero-inner { padding: 96px 0 64px; }
+    .year-kicker { font-family: var(--font-en), var(--font-ja); font-weight: 800; color: #b7f0ff; margin-bottom: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .year-hero h1 { font-size: clamp(2rem, 4.4vw, 4.2rem); line-height: 1.18; letter-spacing: 0; margin-bottom: 18px; }
+    .year-hero p { max-width: 760px; font-size: 1.08rem; line-height: 1.9; }
+    .year-band { padding: 64px 0; }
+    .year-breadcrumbs { margin-bottom: 24px; color: var(--color-text-sub); font-size: .92rem; }
+    .year-breadcrumbs a { color: var(--color-primary); font-weight: 700; }
+    .year-section-title { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.35; letter-spacing: 0; margin-bottom: 16px; }
+    .year-lead { max-width: 880px; color: var(--color-text-sub); line-height: 1.95; margin-bottom: 28px; }
+    .year-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-summary-card, .year-card, .year-work-card, .year-feature-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .year-summary-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+    .year-summary-body { padding: 18px 20px 22px; }
+    .year-summary-body span { display: block; color: var(--color-primary); font-family: var(--font-en), var(--font-ja); font-weight: 800; font-size: 1.05rem; line-height: 1.2; margin-bottom: 8px; }
+    .year-summary-body strong { display: block; font-size: 1.45rem; line-height: 1.35; margin-bottom: 8px; color: var(--color-text-main); }
+    .year-summary-body p, .year-card p, .year-work-card p, .year-feature-card p { color: var(--color-text-sub); line-height: 1.8; }
+    .year-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .year-card, .year-feature-body { padding: 28px; }
+    .year-card h3, .year-work-card h3, .year-feature-card h3 { font-size: 1.28rem; letter-spacing: 0; margin-bottom: 12px; }
+    .year-list { margin-top: 18px; display: grid; gap: 10px; }
+    .year-list li { list-style: none; padding-left: 18px; position: relative; color: var(--color-text-sub); line-height: 1.75; }
+    .year-list li::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--color-accent); position: absolute; left: 0; top: .72em; }
+    .year-section-visual { margin: 0 0 28px; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-section-visual img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; display: block; }
+    .year-section-visual figcaption { padding: 12px 16px 14px; color: var(--color-text-sub); font-size: .92rem; line-height: 1.7; }
+    .year-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-gallery figure { margin: 0; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-gallery img, .year-work-card img, .year-feature-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .year-gallery figcaption { padding: 12px 14px 14px; color: var(--color-text-sub); font-size: .9rem; line-height: 1.6; }
+    .year-work-grid, .year-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 28px; }
+    .year-work-body { padding: 20px; }
+    .year-emphasis { margin-top: 28px; padding: 28px; background: #fff; border-left: 6px solid var(--color-accent); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-emphasis h3 { font-size: 1.4rem; margin-bottom: 12px; letter-spacing: 0; }
+    .year-emphasis p { color: var(--color-text-sub); line-height: 1.9; }
+    @media (max-width: 900px) { .year-summary, .year-two-column { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar glass"><div class="logo"><a href="../../index.html"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo"></a></div><ul class="nav-links"><li><a href="../index.html">浦添市デジタル人材育成事業</a></li><li><a href="../../index.html#about">CoderDojoとは</a></li><li><a href="../../index.html#faq">FAQ</a></li></ul><button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn"><span></span><span></span><span></span></button></nav>
+    <header class="year-hero" style="--hero-image: url('./images/group-photo.jpg');"><div class="year-hero-inner"><div class="year-kicker">2022 Report</div><h1>2022年度 浦添プログラミング道場</h1><p>デジタル技術の体験、PBL、コンピュータサイエンス関連イベントを組み合わせ、参加者と保護者が多様な学びに触れる年度でした。</p></div></header>
+    <main>
+      <section class="year-band"><div class="year-inner"><nav class="year-breadcrumbs"><a href="../../index.html">Top</a> &gt; <a href="../index.html">浦添市デジタル人材育成事業</a> &gt; 2022年度</nav><h2 class="year-section-title">事業概要</h2><p class="year-lead">2022年度は、5月から3月まで計73回の開催予定で、Scratch、AI、Minecraft、ノーコードアプリ、ロボットプログラミングなどの体験に加え、Minecraftカップ、e-Sportsイベント企画、WRO岐阜交流大会、Technovation GirlsなどのPBLに取り組みました。</p><div class="year-summary"><article class="year-summary-card"><picture><source srcset="./images/summary-period.webp" type="image/webp"><img src="./images/summary-period.jpg" alt="参加者が教室で学ぶ様子" loading="lazy"></picture><div class="year-summary-body"><span>実施期間</span><strong>2022年5月〜2023年3月</strong><p>5月から3月まで、感染症対策による休みを挟みながら年間を通して実施しました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-participants.webp" type="image/webp"><img src="./images/summary-participants.jpg" alt="参加者が制作や話し合いを行う様子" loading="lazy"></picture><div class="year-summary-body"><span>参加人数</span><strong>30名</strong><p>オリエンテーションには30名が参加し、年間の活動がスタートしました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-content.webp" type="image/webp"><img src="./images/summary-content.jpg" alt="コンピュータサイエンスワークショップの様子" loading="lazy"></picture><div class="year-summary-body"><span>実施内容サマリー</span><strong>デジタル体験 + PBL + CSイベント</strong><p>Minecraft、ロボット、AI、アプリ開発に加え、大学・探究学習・進路セミナーも組み込みました。</p></div></article></div><div class="year-emphasis"><h3>2022年度の特徴</h3><ul class="year-list"><li>WRO沖縄推進委員会と連携し、ロボットプログラミングの体験を年間活動に組み込みました。</li><li>子どもたちが企画したMinecraft eSportsイベントを開催しました。</li><li>久留米大学ゼミによるコンピュータサイエンスワークショップや、探究学舎による探究学習ワークショップを開催しました。</li><li>保護者向け・中高生向けに、海外での学びやコンピュータサイエンスを学んだ後の進路を考えるセミナーを開催しました。</li></ul></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">実施内容</h2><figure class="year-section-visual"><picture><source srcset="./images/minecraft-work.webp" type="image/webp"><img src="./images/minecraft-work.jpg" alt="Minecraftを使った制作に取り組む参加者の様子" loading="lazy"></picture><figcaption>Minecraftやロボット、アプリ開発など多様なデジタル体験に取り組む様子</figcaption></figure><div class="year-two-column"><article class="year-card"><h3>多様なデジタル体験</h3><p>年間を通じて、デジタル技術の基礎体験と実践の機会を組み合わせました。</p><ul class="year-list"><li>Scratch基礎ワークショップ</li><li>AIプログラミング体験・Google Teachable Machine</li><li>ノーコードでスマホアプリ開発</li><li>ロボットプログラミング基礎</li></ul></article><article class="year-card"><h3>PBLと外部イベント</h3><p>作品や活動を外へ開いていく取り組みとして、コンテストやセミナー、大学連携ワークショップも実施しました。</p><ul class="year-list"><li>Minecraftカップ全国大会</li><li>Minecraftによるe-Sportsイベント企画</li><li>WRO岐阜交流大会</li><li>Technovation Girls、海外進学セミナー、CSワークショップ</li></ul></article></div></div></section>
+      
+      <section class="year-band"><div class="year-inner"><h2 class="year-section-title">実施の様子</h2><p class="year-lead">Scratch、AI、Minecraft、ロボット、アプリ開発など、参加者は複数の技術を体験しながら関心のあるテーマを深めました。</p><div class="year-gallery"><figure><picture><source srcset="./images/orientation.webp" type="image/webp"><img src="./images/orientation.jpg" alt="オリエンテーション" loading="lazy"></picture><figcaption>オリエンテーション</figcaption></figure><figure><picture><source srcset="./images/robot-programming.webp" type="image/webp"><img src="./images/robot-programming.jpg" alt="ロボットプログラミング" loading="lazy"></picture><figcaption>ロボットプログラミング</figcaption></figure><figure><picture><source srcset="./images/minecraft-work.webp" type="image/webp"><img src="./images/minecraft-work.jpg" alt="Minecraftワーク" loading="lazy"></picture><figcaption>Minecraftワーク</figcaption></figure><figure><picture><source srcset="./images/minecraft-cup.webp" type="image/webp"><img src="./images/minecraft-cup.jpg" alt="Minecraftカップ" loading="lazy"></picture><figcaption>Minecraftカップ</figcaption></figure><figure><picture><source srcset="./images/technovation.webp" type="image/webp"><img src="./images/technovation.jpg" alt="Technovation Girls" loading="lazy"></picture><figcaption>Technovation Girls</figcaption></figure><figure><picture><source srcset="./images/seminar.webp" type="image/webp"><img src="./images/seminar.jpg" alt="海外進学・CS関連セミナー" loading="lazy"></picture><figcaption>海外進学・CS関連セミナー</figcaption></figure><figure><picture><source srcset="./images/cs-workshop.webp" type="image/webp"><img src="./images/cs-workshop.jpg" alt="コンピュータサイエンスワークショップ" loading="lazy"></picture><figcaption>コンピュータサイエンスワークショップ</figcaption></figure><figure><picture><source srcset="./images/group-photo.webp" type="image/webp"><img src="./images/group-photo.jpg" alt="集合写真" loading="lazy"></picture><figcaption>集合写真</figcaption></figure></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">成果物・発表</h2><p class="year-lead">Minecraft Cup、e-Sports企画、WRO、Technovation Girlsなど、学んだ技術を外部の挑戦や発表の場へ広げました。</p><div class="year-work-grid"><article class="year-work-card"><picture><source srcset="./images/minecraft-cup.webp" type="image/webp"><img src="./images/minecraft-cup.jpg" alt="Minecraft Cup全国大会" loading="lazy"></picture><div class="year-work-body"><h3>Minecraft Cup全国大会</h3><p>Minecraftを使い、チームでテーマに沿った建築・発表に取り組みました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/minecraft-work.webp" type="image/webp"><img src="./images/minecraft-work.jpg" alt="e-Sportsイベント企画" loading="lazy"></picture><div class="year-work-body"><h3>e-Sportsイベント企画</h3><p>Minecraftを使ったe-Sportsイベント企画に取り組み、企画や運営の視点を学びました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/technovation.webp" type="image/webp"><img src="./images/technovation.jpg" alt="WRO・Technovation Girls" loading="lazy"></picture><div class="year-work-body"><h3>WRO・Technovation Girls</h3><p>ロボット競技やアプリ開発コンテストなど、外部の挑戦機会にも参加しました。</p></div></article></div></div></section>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo"></div><p>子どもたちのための無料プログラミングクラブ</p><div class="footer-links"><a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p></div></div></footer>
+  </div>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

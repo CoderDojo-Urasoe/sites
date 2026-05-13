@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2024年度 浦添プログラミング道場 | 浦添市デジタル人材育成事業</title>
+  <meta name="description" content="2024年度 浦添プログラミング道場の実施概要、活動の様子、成果を紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20260501">
+  <style>
+    .year-hero { margin-top: 80px; min-height: 60vh; display: flex; align-items: flex-end; color: #fff; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,49,75,.86)), var(--hero-image) center / cover; }
+    .year-hero-inner, .year-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .year-hero-inner { padding: 96px 0 64px; }
+    .year-kicker { font-family: var(--font-en), var(--font-ja); font-weight: 800; color: #b7f0ff; margin-bottom: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .year-hero h1 { font-size: clamp(2rem, 4.4vw, 4.2rem); line-height: 1.18; letter-spacing: 0; margin-bottom: 18px; }
+    .year-hero p { max-width: 760px; font-size: 1.08rem; line-height: 1.9; }
+    .year-band { padding: 64px 0; }
+    .year-breadcrumbs { margin-bottom: 24px; color: var(--color-text-sub); font-size: .92rem; }
+    .year-breadcrumbs a { color: var(--color-primary); font-weight: 700; }
+    .year-section-title { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.35; letter-spacing: 0; margin-bottom: 16px; }
+    .year-lead { max-width: 880px; color: var(--color-text-sub); line-height: 1.95; margin-bottom: 28px; }
+    .year-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-summary-card, .year-card, .year-work-card, .year-feature-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .year-summary-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+    .year-summary-body { padding: 18px 20px 22px; }
+    .year-summary-body span { display: block; color: var(--color-primary); font-family: var(--font-en), var(--font-ja); font-weight: 800; font-size: 1.05rem; line-height: 1.2; margin-bottom: 8px; }
+    .year-summary-body strong { display: block; font-size: 1.45rem; line-height: 1.35; margin-bottom: 8px; color: var(--color-text-main); }
+    .year-summary-body p, .year-card p, .year-work-card p, .year-feature-card p { color: var(--color-text-sub); line-height: 1.8; }
+    .year-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .year-card, .year-feature-body { padding: 28px; }
+    .year-card h3, .year-work-card h3, .year-feature-card h3 { font-size: 1.28rem; letter-spacing: 0; margin-bottom: 12px; }
+    .year-list { margin-top: 18px; display: grid; gap: 10px; }
+    .year-list li { list-style: none; padding-left: 18px; position: relative; color: var(--color-text-sub); line-height: 1.75; }
+    .year-list li::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--color-accent); position: absolute; left: 0; top: .72em; }
+    .year-section-visual { margin: 0 0 28px; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-section-visual img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; display: block; }
+    .year-section-visual figcaption { padding: 12px 16px 14px; color: var(--color-text-sub); font-size: .92rem; line-height: 1.7; }
+    .year-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-gallery figure { margin: 0; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-gallery img, .year-work-card img, .year-feature-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .year-gallery figcaption { padding: 12px 14px 14px; color: var(--color-text-sub); font-size: .9rem; line-height: 1.6; }
+    .year-work-grid, .year-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 28px; }
+    .year-work-body { padding: 20px; }
+    .year-emphasis { margin-top: 28px; padding: 28px; background: #fff; border-left: 6px solid var(--color-accent); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-emphasis h3 { font-size: 1.4rem; margin-bottom: 12px; letter-spacing: 0; }
+    .year-emphasis p { color: var(--color-text-sub); line-height: 1.9; }
+    @media (max-width: 900px) { .year-summary, .year-two-column { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar glass"><div class="logo"><a href="../../index.html"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo"></a></div><ul class="nav-links"><li><a href="../index.html">浦添市デジタル人材育成事業</a></li><li><a href="../../index.html#about">CoderDojoとは</a></li><li><a href="../../index.html#faq">FAQ</a></li></ul><button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn"><span></span><span></span><span></span></button></nav>
+    <header class="year-hero" style="--hero-image: url('./images/final-presentation.jpg');"><div class="year-hero-inner"><div class="year-kicker">2024 Report</div><h1>2024年度 浦添プログラミング道場</h1><p>ロボット部門と親子でデジタル創作部門に分かれ、WROへの挑戦と生成AIを使った作品制作を軸に実施されました。</p></div></header>
+    <main>
+      <section class="year-band"><div class="year-inner"><nav class="year-breadcrumbs"><a href="../../index.html">Top</a> &gt; <a href="../index.html">浦添市デジタル人材育成事業</a> &gt; 2024年度</nav><h2 class="year-section-title">事業概要</h2><p class="year-lead">2024年度は計90回開催され、参加者21名がロボット部門と親子でデジタル創作部門に分かれて活動しました。ロボット部門ではWRO沖縄大会・全国大会・岐阜交流大会を目指し、親子でデジタル創作部門では生成AIを使ったLINEスタンプ、Kindle電子書籍、スマホアプリ開発に挑戦しました。</p><div class="year-summary"><article class="year-summary-card"><picture><source srcset="./images/summary-period.webp" type="image/webp"><img src="./images/summary-period.jpg" alt="親子でデジタル創作に取り組む様子" loading="lazy"></picture><div class="year-summary-body"><span>実施期間</span><strong>2024年4月〜2025年3月</strong><p>4月から3月まで計90回、ロボット部門と親子でデジタル創作部門を実施しました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-participants.webp" type="image/webp"><img src="./images/summary-participants.jpg" alt="ロボット競技フィールドで活動する様子" loading="lazy"></picture><div class="year-summary-body"><span>参加人数</span><strong>21名</strong><p>親子でデジタル創作部門11名、ロボット部門10名。小学生12名・中学生9名が参加しました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-content.webp" type="image/webp"><img src="./images/summary-content.jpg" alt="最終報告イベントの会場風景" loading="lazy"></picture><div class="year-summary-body"><span>実施内容サマリー</span><strong>WRO + 親子生成AI創作</strong><p>WRO大会への挑戦と、LINEスタンプ・電子書籍・アプリ制作を軸に学びました。</p></div></article></div><div class="year-emphasis"><h3>2024年度の特徴</h3><ul class="year-list"><li>WRO 2024 Japan決勝大会のミドル競技では、エレメンタリー部門で全国準優勝、ジュニア部門で全国優勝・プレゼン賞受賞の成績をおさめました。</li><li>第4回沖縄・岐阜ロボット交流大会のベーシック競技では、小・中学生部門で優勝と3位を獲得しました。</li><li>親子創作では生成AIを使い、LINEスタンプ、電子書籍、スマホアプリなどの創作にチャレンジしました。</li></ul></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">実施内容</h2><figure class="year-section-visual"><picture><source srcset="./images/creative-work.webp" type="image/webp"><img src="./images/creative-work.jpg" alt="親子でデジタル創作に取り組む様子" loading="lazy"></picture><figcaption>親子デジタル創作とロボットプログラミングに取り組む様子</figcaption></figure><div class="year-two-column"><article class="year-card"><h3>ロボット部門</h3><p>WRO沖縄推進委員会のもと、年間を通じてロボットプログラミングを学び、大会や交流大会へ挑戦しました。</p><ul class="year-list"><li>WRO Japan 2024 公認沖縄予選会</li><li>WRO 2024 Japan 決勝大会</li><li>沖縄・岐阜ロボット交流大会</li><li>WROロボットプログラミング体験会</li></ul></article><article class="year-card"><h3>親子でデジタル創作部門</h3><p>親子で生成AIやアプリ開発に取り組み、制作物の販売や発表、一般来場者への体験レクチャーにも挑戦しました。</p><ul class="year-list"><li>生成AIを使ったLINEスタンプ制作・販売</li><li>Kindle電子書籍の制作・販売</li><li>スマホアプリ開発</li><li>親子デジタル創作プレゼン観覧＆生成AI体験会</li></ul></article></div></div></section>
+      
+      <section class="year-band"><div class="year-inner"><h2 class="year-section-title">実施の様子</h2><p class="year-lead">親子での生成AI活用、作品展示、ロボット競技、Minecraftイベント、最終報告イベントまで、学びを体験と発表に結びつけました。</p><div class="year-gallery"><figure><picture><source srcset="./images/creative-work.webp" type="image/webp"><img src="./images/creative-work.jpg" alt="親子デジタル創作" loading="lazy"></picture><figcaption>親子デジタル創作</figcaption></figure><figure><picture><source srcset="./images/creative-presentation.webp" type="image/webp"><img src="./images/creative-presentation.jpg" alt="創作部門のプレゼン" loading="lazy"></picture><figcaption>創作部門のプレゼン</figcaption></figure><figure><picture><source srcset="./images/works-display.webp" type="image/webp"><img src="./images/works-display.jpg" alt="作品展示" loading="lazy"></picture><figcaption>作品展示</figcaption></figure><figure><picture><source srcset="./images/robot-field.webp" type="image/webp"><img src="./images/robot-field.jpg" alt="ロボット競技フィールド" loading="lazy"></picture><figcaption>ロボット競技フィールド</figcaption></figure><figure><picture><source srcset="./images/wro-award.webp" type="image/webp"><img src="./images/wro-award.jpg" alt="WRO大会表彰" loading="lazy"></picture><figcaption>WRO大会表彰</figcaption></figure><figure><picture><source srcset="./images/wro-team.webp" type="image/webp"><img src="./images/wro-team.jpg" alt="WRO参加チーム" loading="lazy"></picture><figcaption>WRO参加チーム</figcaption></figure><figure><picture><source srcset="./images/parent-creative.webp" type="image/webp"><img src="./images/parent-creative.jpg" alt="親子での制作" loading="lazy"></picture><figcaption>親子での制作</figcaption></figure><figure><picture><source srcset="./images/minecraft-countdown.webp" type="image/webp"><img src="./images/minecraft-countdown.jpg" alt="Minecraftカウントダウン" loading="lazy"></picture><figcaption>Minecraftカウントダウン</figcaption></figure><figure><picture><source srcset="./images/final-presentation.webp" type="image/webp"><img src="./images/final-presentation.jpg" alt="最終報告イベント" loading="lazy"></picture><figcaption>最終報告イベント</figcaption></figure><figure><picture><source srcset="./images/experience-booth.webp" type="image/webp"><img src="./images/experience-booth.jpg" alt="体験ブース" loading="lazy"></picture><figcaption>体験ブース</figcaption></figure></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">成果物・発表</h2><p class="year-lead">LINEスタンプ、電子書籍、スマホアプリ、WROロボット、体験ブースなど、参加者は年間の学びを具体的な作品と発表の形にしました。</p><div class="year-work-grid"><article class="year-work-card"><picture><source srcset="./images/creative-work.webp" type="image/webp"><img src="./images/creative-work.jpg" alt="生成AIによるLINEスタンプ・電子書籍" loading="lazy"></picture><div class="year-work-body"><h3>生成AIによるLINEスタンプ・電子書籍</h3><p>親子で生成AIを活用し、LINEスタンプやKindle電子書籍の制作・販売に挑戦しました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/robot-field.webp" type="image/webp"><img src="./images/robot-field.jpg" alt="WROロボットプログラミング" loading="lazy"></picture><div class="year-work-body"><h3>WROロボットプログラミング</h3><p>ロボット部門では、WRO大会や交流大会を目標に、チームで試行錯誤を重ねました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/experience-booth.webp" type="image/webp"><img src="./images/experience-booth.jpg" alt="最終報告イベントと体験ブース" loading="lazy"></picture><div class="year-work-body"><h3>最終報告イベントと体験ブース</h3><p>年間の学びを参加者自身が一般の子どもたちに体験してもらうイベントとして発表しました。</p></div></article></div></div></section>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo"></div><p>子どもたちのための無料プログラミングクラブ</p><div class="footer-links"><a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p></div></div></footer>
+  </div>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

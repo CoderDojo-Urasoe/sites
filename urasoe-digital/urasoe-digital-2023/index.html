@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2023年度 浦添プログラミング道場 | 浦添市デジタル人材育成事業</title>
+  <meta name="description" content="2023年度 浦添プログラミング道場の実施概要、活動の様子、成果を紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20260501">
+  <style>
+    .year-hero { margin-top: 80px; min-height: 60vh; display: flex; align-items: flex-end; color: #fff; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,49,75,.86)), var(--hero-image) center / cover; }
+    .year-hero-inner, .year-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .year-hero-inner { padding: 96px 0 64px; }
+    .year-kicker { font-family: var(--font-en), var(--font-ja); font-weight: 800; color: #b7f0ff; margin-bottom: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .year-hero h1 { font-size: clamp(2rem, 4.4vw, 4.2rem); line-height: 1.18; letter-spacing: 0; margin-bottom: 18px; }
+    .year-hero p { max-width: 760px; font-size: 1.08rem; line-height: 1.9; }
+    .year-band { padding: 64px 0; }
+    .year-breadcrumbs { margin-bottom: 24px; color: var(--color-text-sub); font-size: .92rem; }
+    .year-breadcrumbs a { color: var(--color-primary); font-weight: 700; }
+    .year-section-title { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.35; letter-spacing: 0; margin-bottom: 16px; }
+    .year-lead { max-width: 880px; color: var(--color-text-sub); line-height: 1.95; margin-bottom: 28px; }
+    .year-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-summary-card, .year-card, .year-work-card, .year-feature-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .year-summary-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+    .year-summary-body { padding: 18px 20px 22px; }
+    .year-summary-body span { display: block; color: var(--color-primary); font-family: var(--font-en), var(--font-ja); font-weight: 800; font-size: 1.05rem; line-height: 1.2; margin-bottom: 8px; }
+    .year-summary-body strong { display: block; font-size: 1.45rem; line-height: 1.35; margin-bottom: 8px; color: var(--color-text-main); }
+    .year-summary-body p, .year-card p, .year-work-card p, .year-feature-card p { color: var(--color-text-sub); line-height: 1.8; }
+    .year-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .year-card, .year-feature-body { padding: 28px; }
+    .year-card h3, .year-work-card h3, .year-feature-card h3 { font-size: 1.28rem; letter-spacing: 0; margin-bottom: 12px; }
+    .year-list { margin-top: 18px; display: grid; gap: 10px; }
+    .year-list li { list-style: none; padding-left: 18px; position: relative; color: var(--color-text-sub); line-height: 1.75; }
+    .year-list li::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--color-accent); position: absolute; left: 0; top: .72em; }
+    .year-section-visual { margin: 0 0 28px; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-section-visual img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; display: block; }
+    .year-section-visual figcaption { padding: 12px 16px 14px; color: var(--color-text-sub); font-size: .92rem; line-height: 1.7; }
+    .year-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-gallery figure { margin: 0; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-gallery img, .year-work-card img, .year-feature-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .year-gallery figcaption { padding: 12px 14px 14px; color: var(--color-text-sub); font-size: .9rem; line-height: 1.6; }
+    .year-work-grid, .year-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 28px; }
+    .year-work-body { padding: 20px; }
+    .year-emphasis { margin-top: 28px; padding: 28px; background: #fff; border-left: 6px solid var(--color-accent); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-emphasis h3 { font-size: 1.4rem; margin-bottom: 12px; letter-spacing: 0; }
+    .year-emphasis p { color: var(--color-text-sub); line-height: 1.9; }
+    @media (max-width: 900px) { .year-summary, .year-two-column { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar glass"><div class="logo"><a href="../../index.html"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo"></a></div><ul class="nav-links"><li><a href="../index.html">浦添市デジタル人材育成事業</a></li><li><a href="../../index.html#about">CoderDojoとは</a></li><li><a href="../../index.html#faq">FAQ</a></li></ul><button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn"><span></span><span></span><span></span></button></nav>
+    <header class="year-hero" style="--hero-image: url('./images/final-group.jpg');"><div class="year-hero-inner"><div class="year-kicker">2023 Report</div><h1>2023年度 浦添プログラミング道場</h1><p>ロボット部門とアプリ開発部門に分かれ、WROや各種プログラミングコンテストを目指した高度な活動に取り組みました。</p></div></header>
+    <main>
+      <section class="year-band"><div class="year-inner"><nav class="year-breadcrumbs"><a href="../../index.html">Top</a> &gt; <a href="../index.html">浦添市デジタル人材育成事業</a> &gt; 2023年度</nav><h2 class="year-section-title">事業概要</h2><p class="year-lead">2023年度は4月から3月まで計88回実施され、ロボット部門ではWRO沖縄大会・全国大会・岐阜交流大会を目指し、アプリ開発部門ではU22プログラミングコンテスト、Technovation Girls、全国小中学生プログラミングコンテストへの応募と入賞を目標に学びました。あわせて、AI、Scratch、ボードゲーム、探究学習、星空観測など多様なイベントも行われました。</p><div class="year-summary"><article class="year-summary-card"><picture><source srcset="./images/summary-period.webp" type="image/webp"><img src="./images/summary-period.jpg" alt="オリエンテーションの様子" loading="lazy"></picture><div class="year-summary-body"><span>実施期間</span><strong>2023年4月〜2024年3月</strong><p>4月から3月まで、ロボット部門とアプリ開発部門を並行して実施しました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-participants.webp" type="image/webp"><img src="./images/summary-participants.jpg" alt="イベント会場での活動風景" loading="lazy"></picture><div class="year-summary-body"><span>参加人数</span><strong>30名</strong><p>ロボット部門とアプリ開発部門に分かれ、年間を通して制作と大会・発表へ取り組みました。</p></div></article><article class="year-summary-card"><picture><source srcset="./images/summary-content.webp" type="image/webp"><img src="./images/summary-content.jpg" alt="最終イベントでの体験ブース" loading="lazy"></picture><div class="year-summary-body"><span>実施内容サマリー</span><strong>WRO + アプリ開発 + AI体験</strong><p>WRO大会、アプリ開発、AI・Scratchワークショップ、探究学習イベントを組み合わせました。</p></div></article></div><div class="year-emphasis"><h3>2023年度の特徴</h3><ul class="year-list"><li>この年からWRO沖縄推進委員会と連携した開催となり、ロボット部門ではWRO大会を目指した継続的な学びを進めました。</li><li>WRO全国大会には浦添から2チームが参加し、小学生部門で準優勝、中学生部門で4位を獲得しました。</li></ul></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">実施内容</h2><figure class="year-section-visual"><picture><source srcset="./images/robot-work.webp" type="image/webp"><img src="./images/robot-work.jpg" alt="ロボット制作に取り組む参加者の様子" loading="lazy"></picture><figcaption>ロボット部門とアプリ開発部門で制作に取り組む様子</figcaption></figure><div class="year-two-column"><article class="year-card"><h3>ロボット部門</h3><p>WRO沖縄推進委員会の指導・運営により、WRO大会を目標にロボットプログラミングを継続的に学びました。</p><ul class="year-list"><li>ロボットプログラミング講習・試走会</li><li>WRO Japan 2023 公認沖縄予選会</li><li>WRO Japan 2023 決勝大会</li><li>第3回 沖縄・岐阜ロボット交流大会</li></ul></article><article class="year-card"><h3>アプリ開発部門とイベント</h3><p>CoderDojo浦添が中心となり、アプリ開発に必要な知識と技術を学び、生成AIやScratch、ボードゲーム、探究学習などの体験も行いました。</p><ul class="year-list"><li>U22プログラミングコンテスト等への挑戦</li><li>AIで電子書籍・LINEスタンプ制作</li><li>AIプログラミングワークショップ</li><li>プログラミング体験会と最終イベント</li></ul></article></div></div></section>
+      
+      <section class="year-band"><div class="year-inner"><h2 class="year-section-title">実施の様子</h2><p class="year-lead">ロボット部門とアプリ開発部門に分かれ、日々の制作、試走、大会、体験イベントへと活動を積み上げました。</p><div class="year-gallery"><figure><picture><source srcset="./images/orientation.webp" type="image/webp"><img src="./images/orientation.jpg" alt="オリエンテーション" loading="lazy"></picture><figcaption>オリエンテーション</figcaption></figure><figure><picture><source srcset="./images/wro-event.webp" type="image/webp"><img src="./images/wro-event.jpg" alt="WRO大会" loading="lazy"></picture><figcaption>WRO大会</figcaption></figure><figure><picture><source srcset="./images/ai-ebook.webp" type="image/webp"><img src="./images/ai-ebook.jpg" alt="AIで電子書籍作成" loading="lazy"></picture><figcaption>AIで電子書籍作成</figcaption></figure><figure><picture><source srcset="./images/board-game.webp" type="image/webp"><img src="./images/board-game.jpg" alt="ボードゲーム体験" loading="lazy"></picture><figcaption>ボードゲーム体験</figcaption></figure><figure><picture><source srcset="./images/board-game-work.webp" type="image/webp"><img src="./images/board-game-work.jpg" alt="カードを使ったワークショップ" loading="lazy"></picture><figcaption>カードを使ったワークショップ</figcaption></figure><figure><picture><source srcset="./images/final-booth.webp" type="image/webp"><img src="./images/final-booth.jpg" alt="体験ブース" loading="lazy"></picture><figcaption>体験ブース</figcaption></figure></div></div></section>
+      <section class="year-band bg-light"><div class="year-inner"><h2 class="year-section-title">成果物・発表</h2><p class="year-lead">WROへの挑戦、アプリ開発、AI・Scratch体験ワークショップを通して、制作したものを発表し、他の子どもたちへ伝える場をつくりました。</p><div class="year-work-grid"><article class="year-work-card"><picture><source srcset="./images/wro-team.webp" type="image/webp"><img src="./images/wro-team.jpg" alt="WRO全国大会に参加した浦添チーム" loading="lazy"></picture><div class="year-work-body"><h3>WRO大会への挑戦</h3><p>WROを目標に、ロボットの調整、プログラミング、試走、大会参加に取り組みました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/ai-programming.webp" type="image/webp"><img src="./images/ai-programming.jpg" alt="アプリ開発・コンテスト挑戦" loading="lazy"></picture><div class="year-work-body"><h3>アプリ開発・コンテスト挑戦</h3><p>アプリ開発に必要な技術を学び、各種プログラミングコンテストへの応募を目指しました。</p></div></article><article class="year-work-card"><picture><source srcset="./images/workshop-demo.webp" type="image/webp"><img src="./images/workshop-demo.jpg" alt="AI・Scratch体験ワークショップ" loading="lazy"></picture><div class="year-work-body"><h3>AI・Scratch体験ワークショップ</h3><p>画像生成AIやScratchを使い、一般参加者も体験できる学びの場をつくりました。</p></div></article></div></div></section>
+    </main>
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo"></div><p>子どもたちのための無料プログラミングクラブ</p><div class="footer-links"><a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer">LINE</a><a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a></div></div><div class="footer-bottom"><p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p></div></div></footer>
+  </div>
+  <script src="../../js/main.js"></script>
+</body>
+</html>
