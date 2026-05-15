@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025年度 浦添プログラミング道場 | 浦添市デジタル人材育成事業</title>
+  <meta name="description" content="2025年度 浦添プログラミング道場の実施概要、活動の様子、成果、参加者アンケートを紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../img/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css?v=20260501">
+  <style>
+    .year-hero { margin-top: 80px; min-height: 60vh; display: flex; align-items: flex-end; color: #fff; background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,49,75,.86)), var(--hero-image) center / cover; }
+    .year-hero-inner, .year-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .year-hero-inner { padding: 96px 0 64px; }
+    .year-kicker { font-family: var(--font-en), var(--font-ja); font-weight: 800; color: #b7f0ff; margin-bottom: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .year-hero h1 { font-size: clamp(2rem, 4.4vw, 4.2rem); line-height: 1.18; letter-spacing: 0; margin-bottom: 18px; }
+    .year-hero p { max-width: 760px; font-size: 1.08rem; line-height: 1.9; }
+    .year-band { padding: 64px 0; }
+    .year-breadcrumbs { margin-bottom: 24px; color: var(--color-text-sub); font-size: .92rem; }
+    .year-breadcrumbs a { color: var(--color-primary); font-weight: 700; }
+    .year-section-title { font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.35; letter-spacing: 0; margin-bottom: 16px; }
+    .year-lead { max-width: 880px; color: var(--color-text-sub); line-height: 1.95; margin-bottom: 28px; }
+    .year-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-summary-card, .year-card, .year-work-card, .year-feature-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .year-summary-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+    .year-summary-body { padding: 18px 20px 22px; }
+    .year-summary-body span { display: block; color: var(--color-primary); font-family: var(--font-en), var(--font-ja); font-weight: 800; font-size: 1.05rem; line-height: 1.2; margin-bottom: 8px; }
+    .year-summary-body strong { display: block; font-size: 1.45rem; line-height: 1.35; margin-bottom: 8px; color: var(--color-text-main); }
+    .year-summary-body p, .year-card p, .year-work-card p, .year-feature-card p { color: var(--color-text-sub); line-height: 1.8; }
+    .year-two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .year-card, .year-feature-body { padding: 28px; }
+    .year-card h3, .year-work-card h3, .year-feature-card h3 { font-size: 1.28rem; letter-spacing: 0; margin-bottom: 12px; }
+    .year-list { margin-top: 18px; display: grid; gap: 10px; }
+    .year-list li { list-style: none; padding-left: 18px; position: relative; color: var(--color-text-sub); line-height: 1.75; }
+    .year-list li::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--color-accent); position: absolute; left: 0; top: .72em; }
+    .year-list a { color: var(--color-primary); font-weight: 700; }
+    .year-section-visual { margin: 0 0 28px; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-section-visual img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; display: block; }
+    .year-section-visual figcaption { padding: 12px 16px 14px; color: var(--color-text-sub); font-size: .92rem; line-height: 1.7; }
+    .year-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
+    .year-gallery figure { margin: 0; overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-gallery img, .year-work-card img, .year-feature-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .year-gallery figcaption { padding: 12px 14px 14px; color: var(--color-text-sub); font-size: .9rem; line-height: 1.6; }
+    .year-work-grid, .year-feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 28px; }
+    .year-work-body { padding: 20px; }
+    .year-emphasis { margin-top: 28px; padding: 28px; background: #fff; border-left: 6px solid var(--color-accent); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .year-emphasis h3 { font-size: 1.4rem; margin-bottom: 12px; letter-spacing: 0; }
+    .year-emphasis p { color: var(--color-text-sub); line-height: 1.9; }
+    @media (max-width: 900px) { .year-summary, .year-two-column { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar glass">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../index.html#about">CoderDojoとは</a></li>
+        <li><a href="../../index.html#join">参加するには</a></li>
+        <li><a href="../../urasoe-digital/">浦添市デジタル人材育成事業</a></li>
+        <li><a href="https://forms.gle/Eprh64LG7AdSkBYr6" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <header class="year-hero" style="--hero-image: url('./images/hero-final.jpg');">
+      <div class="year-hero-inner">
+        <div class="year-kicker">2025 Report</div>
+        <h1>2025年度 浦添プログラミング道場</h1>
+        <p>ロボット部門とプログラミング部門の二部門で実施し、WRO への挑戦、Scratch から JavaScript への発展、地域イベント運営、イベントアプリ開発、最終報告会での発表までを一体で進めました。</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="year-band">
+        <div class="year-inner">
+          <nav class="year-breadcrumbs"><a href="../../index.html">Top</a> &gt; <a href="../index.html">浦添市デジタル人材育成事業</a> &gt; 2025年度</nav>
+          <h2 class="year-section-title">事業概要</h2>
+          <p class="year-lead">2025年度は、プログラミング部門 15 名、ロボット部門 6 名の計 21 名で事業を実施しました。プログラミング部門は募集ちらしと説明会を通じて参加者を募り、Scratch による基礎学習から JavaScript、作品制作、イベント運営、アプリ開発へ段階的に発展させました。ロボット部門は一般募集を行わず、継続参加者と事前体験会参加者を対象に面談のうえ参加を決定し、WRO 競技と交流大会を軸に活動しました。</p>
+          <div class="year-summary">
+            <article class="year-summary-card">
+              <picture>
+                <source srcset="./images/summary-period.webp" type="image/webp">
+                <img src="./images/summary-period.jpg" alt="教室でプログラミングに取り組む参加者" loading="lazy">
+              </picture>
+              <div class="year-summary-body">
+                <span>実施期間</span>
+                <strong>2025年4月〜2026年3月</strong>
+                <p>年間 61 日、111 コマを開催し、平常講座と大会・イベント実践を組み合わせて実施しました。</p>
+              </div>
+            </article>
+            <article class="year-summary-card">
+              <picture>
+                <source srcset="./images/summary-participants.webp" type="image/webp">
+                <img src="./images/summary-participants.jpg" alt="体験イベント会場に集まる参加者" loading="lazy">
+              </picture>
+              <div class="year-summary-body">
+                <span>参加人数</span>
+                <strong>21名</strong>
+                <p>プログラミング部門 15 名、ロボット部門 6 名。小学生 12 名、中学生 8 名、高校生 1 名が参加しました。</p>
+              </div>
+            </article>
+            <article class="year-summary-card">
+              <picture>
+                <source srcset="./images/summary-content.webp" type="image/webp">
+                <img src="./images/summary-content.jpg" alt="最終報告会でプレゼンする参加者" loading="lazy">
+              </picture>
+              <div class="year-summary-body">
+                <span>実施内容サマリー</span>
+                <strong>WRO + 作品制作 + 地域還元</strong>
+                <p>WRO、体験イベント運営、ミチシルベ公式イベントアプリ、最終報告会まで、学びと発表を往復する構成で取り組みました。</p>
+              </div>
+            </article>
+          </div>
+          <div class="year-emphasis">
+            <h3>2025年度の特徴</h3>
+            <ul class="year-list">
+              <li>プログラミング部門は Scratch から JavaScript、作品発表、イベント運営、PWA アプリ開発まで段階的に取り組みました。</li>
+              <li>ロボット部門は WRO Japan 2025 公認沖縄予選会でエレメンタリー部門第 3 位、ジュニア部門優勝、12 月の決勝大会では Team VeIn がミドル競技ジュニア部門優勝を達成しました。</li>
+              <li>9 月の親子体験イベントでは、参加者自身がタイピングチャレンジやプログラミング体験の運営側に立ち、学びを地域へ還元しました。</li>
+              <li>3 月の最終報告会では、作品紹介、イベントアプリ紹介、ロボット部門発表、体験コーナー運営を通じて、学びを第三者に伝える機会を設けました。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="year-band bg-light">
+        <div class="year-inner">
+          <h2 class="year-section-title">実施内容</h2>
+          <figure class="year-section-visual">
+            <picture>
+              <source srcset="./images/programming-work.webp" type="image/webp">
+              <img src="./images/programming-work.jpg" alt="通常講座で制作に取り組む参加者" loading="lazy">
+            </picture>
+            <figcaption>通常講座では、プログラミング部門とロボット部門がそれぞれの目標に合わせて継続的に活動しました。</figcaption>
+          </figure>
+          <div class="year-two-column">
+            <article class="year-card">
+              <h3>プログラミング部門</h3>
+              <p>募集ちらしと説明会を通じて参加者を募り、Scratch による基礎学習から JavaScript、作品制作、ポートフォリオ整理、イベントアプリ開発、最終報告会でのプレゼンテーションまでを実施しました。JavaScript の基礎を学んだ後は、Google の Antigravity を使って、生成AIを活用した作品創りにも挑戦しました。</p>
+              <ul class="year-list">
+                <li>Scratch による基礎学習とタイピング練習</li>
+                <li>JavaScript を使った作品制作</li>
+                <li>9 月 28 日の親子体験イベント運営</li>
+                <li>2 月 14 日のミチシルベ公式イベントアプリ開発・出展</li>
+              </ul>
+            </article>
+            <article class="year-card">
+              <h3>ロボット部門</h3>
+              <p>継続参加者を中心に、WRO 模擬大会、公認沖縄予選会、ミドル競技、全国決勝、交流大会へ向けたロボット製作・調整・発表を行いました。一般募集は行わず、事前体験会参加者を含めて面談のうえ参加者を決定しました。</p>
+              <ul class="year-list">
+                <li>WRO Japan 2025 公認沖縄予選会</li>
+                <li>WRO ミドル競技と全国決勝大会</li>
+                <li>第 5 回沖縄・岐阜ロボット交流大会</li>
+                <li>市長訪問・表敬訪問による成果発信</li>
+              </ul>
+            </article>
+          </div>
+          <div class="year-emphasis">
+            <h3>主なイベント</h3>
+            <ul class="year-list">
+              <li>2025年4月〜5月: 参加者募集・説明会・オリエンテーション</li>
+              <li>2025年7月: WRO Japan 2025 公認沖縄予選会</li>
+              <li>2025年9月28日: 親子で楽しむ創作・デジタル体験 with Teacher Teacher</li>
+              <li>2025年10月26日〜12月7日: WRO ミドル競技・全国決勝</li>
+              <li>2026年1月18日: 第5回沖縄・岐阜ロボット交流大会</li>
+              <li>2026年2月14日: ミチシルベ公式イベントアプリプロジェクト</li>
+              <li>2026年3月: 最終報告会</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="year-band">
+        <div class="year-inner">
+          <h2 class="year-section-title">実施の様子</h2>
+          <p class="year-lead">通常講座、WRO 競技、親子体験イベント、イベントアプリ出展、最終報告会まで、参加者は学ぶ側と伝える側を行き来しながら活動しました。</p>
+          <div class="year-gallery">
+            <figure>
+              <picture>
+                <source srcset="./images/group-work.webp" type="image/webp">
+                <img src="./images/group-work.jpg" alt="グループワークの様子" loading="lazy">
+              </picture>
+              <figcaption>プログラミング部門のグループワーク</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/programming-work.webp" type="image/webp">
+                <img src="./images/programming-work.jpg" alt="制作に取り組むプログラミング部門の参加者" loading="lazy">
+              </picture>
+              <figcaption>作品制作と通常活動</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/typing-challenge.webp" type="image/webp">
+                <img src="./images/typing-challenge.jpg" alt="体験イベントでタイピングチャレンジを運営する様子" loading="lazy">
+              </picture>
+              <figcaption>体験イベントのタイピングチャレンジ</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/event-app.webp" type="image/webp">
+                <img src="./images/event-app.jpg" alt="ミチシルベ会場でイベントアプリを紹介する様子" loading="lazy">
+              </picture>
+              <figcaption>ミチシルベ公式イベントアプリ出展</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/wro-field.webp" type="image/webp">
+                <img src="./images/wro-field.jpg" alt="WRO フィールドでロボットを調整する様子" loading="lazy">
+              </picture>
+              <figcaption>WRO に向けたロボット調整</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/wro-award.webp" type="image/webp">
+                <img src="./images/wro-award.jpg" alt="WRO 優勝時の記念撮影" loading="lazy">
+              </picture>
+              <figcaption>WRO 決勝優勝</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/city-visit.webp" type="image/webp">
+                <img src="./images/city-visit.jpg" alt="市長訪問で成果を報告する様子" loading="lazy">
+              </picture>
+              <figcaption>市長訪問による成果発信</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/final-app.webp" type="image/webp">
+                <img src="./images/final-app.jpg" alt="最終報告会でイベントアプリを紹介する様子" loading="lazy">
+              </picture>
+              <figcaption>最終報告会でのイベントアプリ紹介</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/final-robot.webp" type="image/webp">
+                <img src="./images/final-robot.jpg" alt="最終報告会でロボット部門が発表する様子" loading="lazy">
+              </picture>
+              <figcaption>最終報告会でのロボット部門発表</figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="./images/final-experience.webp" type="image/webp">
+                <img src="./images/final-experience.jpg" alt="最終報告会の体験コーナー" loading="lazy">
+              </picture>
+              <figcaption>最終報告会の体験コーナー</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="year-band bg-light">
+        <div class="year-inner">
+          <h2 class="year-section-title">成果・公開情報</h2>
+          <p class="year-lead">作品制作、競技大会、イベント運営、アプリ開発、公開サイト整備まで、学びの成果を外部へ伝わる形にまとめました。</p>
+          <div class="year-work-grid">
+            <article class="year-work-card">
+              <picture>
+                <source srcset="./images/programming-work.webp" type="image/webp">
+                <img src="./images/programming-work.jpg" alt="プログラミング作品制作の様子" loading="lazy">
+              </picture>
+              <div class="year-work-body">
+                <h3>プログラミング部門の成果</h3>
+                <p>Scratch から JavaScript へ進み、作品制作、プレゼンテーション、体験イベント運営を通じて、学んだ内容を人に伝える経験まで含めて取り組みました。</p>
+              </div>
+            </article>
+            <article class="year-work-card">
+              <picture>
+                <source srcset="./images/wro-field.webp" type="image/webp">
+                <img src="./images/wro-field.jpg" alt="ロボット競技に向けた調整の様子" loading="lazy">
+              </picture>
+              <div class="year-work-body">
+                <h3>ロボット部門の成果</h3>
+                <p>WRO Japan 2025 公認沖縄予選会ではエレメンタリー部門第 3 位、ジュニア部門優勝、決勝大会では Team VeIn がミドル競技ジュニア部門優勝を達成しました。</p>
+              </div>
+            </article>
+            <article class="year-work-card">
+              <picture>
+                <source srcset="./images/event-app.webp" type="image/webp">
+                <img src="./images/event-app.jpg" alt="ミチシルベ会場でアプリを展示する様子" loading="lazy">
+              </picture>
+              <div class="year-work-body">
+                <h3>地域イベントと公開成果物</h3>
+                <p>体験イベントとミチシルベ出展では、参加者が運営者・開発者として関わり、教材サイト、ポートフォリオ、イベントアプリの公開までつなげました。</p>
+              </div>
+            </article>
+          </div>
+          <div class="year-two-column" style="margin-top: 28px;">
+            <article class="year-card">
+              <h3>公開情報</h3>
+              <ul class="year-list">
+                <li><a href="https://sites.google.com/coderdojo.com/urasoe2025/product" target="_blank" rel="noopener noreferrer">参加者作品ポートフォリオ</a></li>
+                <li><a href="https://sites.google.com/coderdojo.com/urasoe2025/project" target="_blank" rel="noopener noreferrer">ミチシルベ公式イベントアプリ</a></li>
+              </ul>
+            </article>
+            <article class="year-card">
+              <h3>年度成果の要点</h3>
+              <ul class="year-list">
+                <li>通常講座だけでなく、体験イベントや最終報告会で外部へ発信する場を継続的に設定しました。</li>
+                <li>プログラミング部門では学習から制作、運営、発表までを一貫して経験できる構成にしました。</li>
+                <li>ロボット部門では競技成績に加え、市長訪問や交流大会を通じて対外発信の機会も確保しました。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo">
+          </div>
+          <p>子どもたちのための無料プログラミングクラブ</p>
+          <div class="footer-links">
+            <a href="https://lin.ee/8hwsjVF" target="_blank" rel="noopener noreferrer">LINE</a>
+            <a href="https://x.com/UrasoeDojo" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.facebook.com/coderdojo.urasoe" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://coderdojo.jp/" target="_blank" rel="noopener noreferrer">CoderDojo Japan</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

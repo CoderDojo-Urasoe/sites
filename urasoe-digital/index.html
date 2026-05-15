@@ -130,6 +130,18 @@
       box-shadow: var(--shadow-sm);
     }
 
+    a.digital-timeline-item {
+      display: block;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a.digital-timeline-item:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
     .digital-timeline-item::before {
       content: "";
       position: absolute;
@@ -192,6 +204,50 @@
       background: linear-gradient(135deg, #e6f6fd, #f7fbff);
     }
 
+    .digital-year-placeholder {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 22% 22%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 34%),
+        linear-gradient(135deg, #0e5f8f, #1a90ba 52%, #7bd7f2);
+    }
+
+    .digital-year-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04)),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0 12px, rgba(255, 255, 255, 0.02) 12px 24px);
+    }
+
+    .digital-year-placeholder-inner {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      gap: 8px;
+      text-align: center;
+      color: #fff;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .digital-year-placeholder-inner strong {
+      font-family: var(--font-en), var(--font-ja);
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+      letter-spacing: 0.08em;
+    }
+
+    .digital-year-placeholder-inner span {
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.92;
+    }
+
     .digital-year-body {
       padding: 20px;
     }
@@ -238,21 +294,21 @@
 <body>
   <div id="app">
     <nav class="navbar glass">
-      <div class="logo">
-        <a href="../index.html">
-          <img src="../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../urasoe-digital/">浦添市デジタル人材育成事業</a></li>
-        <li><a href="../index.html#about">CoderDojoとは</a></li>
-        <li><a href="../index.html#join">参加したい方</a></li>
-        <li><a href="../index.html#faq">FAQ</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+  <div class="logo">
+    <a href="../index.html">
+      <img src="../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">CoderDojoとは</a></li>
+    <li><a href="../index.html#join">参加するには</a></li>
+    <li><a href="../urasoe-digital/">浦添市デジタル人材育成事業</a></li>
+    <li><a href="https://forms.gle/Eprh64LG7AdSkBYr6" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+  </ul>
+  <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
     <header class="digital-hero">
       <div class="digital-hero-inner">
@@ -280,41 +336,41 @@
           <h2 class="digital-section-title">事業概要</h2>
           <p class="digital-section-lead">浦添市デジタル人材育成事業は、浦添市内の18歳未満の子たちに、生成AI、プログラミング、ゲーム・アニメーション制作、ロボコンチャレンジの機会を通して、自身の関心に向き合い、取り組むことを自ら決め、保護者も一緒になって、これからの学びを探究していく、未来の地域を支える人材を支える活動です。</p>
           <div class="digital-timeline" aria-label="2019年度から2025年度までの事業概要年表">
-            <article class="digital-timeline-item">
+            <a class="digital-timeline-item" href="./urasoe-digital-2019/">
               <span>2019年度</span>
               <h3>ゲーム・アニメーション制作とロボットプログラミング</h3>
               <p>初年度は2期制で実施し、作品制作、成果発表、ロボットプログラミングに取り組みました。</p>
-            </article>
-            <article class="digital-timeline-item">
+            </a>
+            <a class="digital-timeline-item" href="./urasoe-digital-2020/">
               <span>2020年度</span>
               <h3>オンラインと対面を組み合わせたハイブリッド開催</h3>
               <p>感染症対策のもと、PC・Wi-Fi貸出やオンライン支援を取り入れ、子どもたちの学びを継続しました。</p>
-            </article>
-            <article class="digital-timeline-item">
+            </a>
+            <a class="digital-timeline-item" href="./urasoe-digital-2021/">
               <span>2021年度</span>
               <h3>PBLと地域プロジェクト</h3>
               <p>AI、ノーコード、3DCGなどの体験を経て、浦添をテーマにしたチームプロジェクトへ発展しました。</p>
-            </article>
-            <article class="digital-timeline-item">
+            </a>
+            <a class="digital-timeline-item" href="./urasoe-digital-2022/">
               <span>2022年度</span>
               <h3>デジタル体験と外部連携</h3>
               <p>Minecraft、ロボット、アプリ開発、コンピュータサイエンスイベントなど、多様な学びを組み合わせました。</p>
-            </article>
-            <article class="digital-timeline-item">
+            </a>
+            <a class="digital-timeline-item" href="./urasoe-digital-2023/">
               <span>2023年度</span>
               <h3>ロボット部門とアプリ開発部門</h3>
               <p>WRO沖縄推進委員会と連携し、ロボット競技とアプリ開発・コンテスト挑戦を並行して進めました。</p>
-            </article>
-            <article class="digital-timeline-item">
+            </a>
+            <a class="digital-timeline-item" href="./urasoe-digital-2024/">
               <span>2024年度</span>
               <h3>WROへの挑戦と親子でデジタル創作</h3>
               <p>ロボット部門では全国大会へ挑戦し、親子創作では生成AIを使ったLINEスタンプ、電子書籍、アプリ制作に取り組みました。</p>
-            </article>
-            <article class="digital-timeline-item">
+            </a>
+            <a class="digital-timeline-item" href="./urasoe-digital-2025/">
               <span>2025年度</span>
-              <h3>実施内容を整理中</h3>
-              <p>公開用素材と実施記録の確認後、年度ページとして追加予定です。</p>
-            </article>
+              <h3>WROとプログラミング実践、地域イベント運営</h3>
+              <p>ロボット部門とプログラミング部門を実施し、WROへの挑戦、体験イベント運営、イベントアプリ開発、最終報告会での発表までを行いました。</p>
+            </a>
           </div>
         </div>
       </section>
@@ -322,7 +378,7 @@
       <section class="digital-band">
         <div class="digital-inner">
           <h2 class="digital-section-title">年度別の取り組み</h2>
-          <p class="digital-section-lead">2019年度から2024年度までの実施報告書をもとに、各年度の取り組みを紹介しています。2025年度以降は素材確認後に順次追加します。</p>
+          <p class="digital-section-lead">2019年度から2025年度までの実施報告書をもとに、各年度の取り組みを紹介しています。2026年度以降も実施内容を順次追加します。</p>
           <div class="digital-year-grid">
             <a class="digital-year-card" href="./urasoe-digital-2019/">
               <picture>
@@ -390,16 +446,24 @@
                 <p>WROへの挑戦と、生成AIを使ったLINEスタンプ・電子書籍・アプリ制作を進めました。</p>
               </div>
             </a>
-            <div class="digital-year-card is-disabled">
-              <div class="digital-year-placeholder"></div>
+            <a class="digital-year-card" href="./urasoe-digital-2025/">
+              <picture>
+                <source srcset="./urasoe-digital-2025/images/hero-final.webp" type="image/webp">
+                <img src="./urasoe-digital-2025/images/hero-final.jpg" alt="2025年度の最終報告会に参加する子どもたち">
+              </picture>
               <div class="digital-year-body">
                 <span>2025年度</span>
-                <h3>準備中</h3>
-                <p>素材確認後に公開予定です。</p>
+                <h3>ロボット部門とプログラミング部門</h3>
+                <p>WRO への挑戦、作品制作、体験イベント運営、イベントアプリ開発、最終報告会での発表までを紹介します。</p>
               </div>
-            </div>
+            </a>
             <div class="digital-year-card is-disabled">
-              <div class="digital-year-placeholder"></div>
+              <div class="digital-year-placeholder">
+                <div class="digital-year-placeholder-inner">
+                  <span>Coming Soon</span>
+                  <strong>2026年度</strong>
+                </div>
+              </div>
               <div class="digital-year-body">
                 <span>2026年度</span>
                 <h3>募集終了</h3>
