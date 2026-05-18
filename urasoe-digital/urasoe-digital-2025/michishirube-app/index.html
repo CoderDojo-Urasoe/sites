@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ミチシルベ公式イベントアプリ | 2025年度 浦添市デジタル人材育成事業</title>
+  <meta name="description" content="2025年度 浦添市デジタル人材育成事業のミチシルベ公式イベントアプリ開発プロジェクトを紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../../img/favicon.png">
+  <link rel="stylesheet" href="../../../css/style.css?v=20260501">
+  <style>
+    .project-hero { margin-top: 80px; padding: 96px 0 64px; color: #fff; background: linear-gradient(135deg, rgba(0,49,75,.92), rgba(0,148,179,.78)), url("../images/event-app.jpg") center / cover; }
+    .project-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .project-kicker { font-family: var(--font-en), var(--font-ja); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #b7f0ff; margin-bottom: 12px; }
+    .project-hero h1 { font-size: clamp(2rem, 4vw, 4rem); line-height: 1.18; letter-spacing: 0; margin-bottom: 16px; }
+    .project-hero p, .project-lead { max-width: 880px; line-height: 1.9; }
+    .project-band { padding: 64px 0; }
+    .project-breadcrumbs { margin-bottom: 24px; color: var(--color-text-sub); font-size: .92rem; }
+    .project-breadcrumbs a { color: var(--color-primary); font-weight: 700; }
+    .project-title { font-size: clamp(1.55rem, 3vw, 2.35rem); letter-spacing: 0; margin-bottom: 14px; }
+    .project-lead { color: var(--color-text-sub); margin-bottom: 28px; }
+    .member-grid, .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .member-card, .project-card { overflow: hidden; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .member-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: #f6f9fc; }
+    .member-body, .project-card { padding: 22px; }
+    .member-body span, .project-card span { display: inline-block; color: var(--color-primary); font-family: var(--font-en), var(--font-ja); font-weight: 800; font-size: .82rem; margin-bottom: 8px; }
+    .member-body h2, .project-card h2 { font-size: 1.25rem; letter-spacing: 0; margin-bottom: 8px; }
+    .member-body p, .project-card p { color: var(--color-text-sub); line-height: 1.75; }
+    .project-card a { color: var(--color-primary); font-weight: 700; word-break: break-word; }
+    .note-card { margin-top: 28px; padding: 24px; border-left: 6px solid var(--color-accent); background: #fff; border-radius: var(--radius-m); box-shadow: var(--shadow-sm); }
+    .note-card p { color: var(--color-text-sub); line-height: 1.9; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar glass">
+      <div class="logo">
+        <a href="../../../index.html">
+          <img src="../../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="brand-logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../../urasoe-digital/">浦添市デジタル人材育成事業</a></li>
+        <li><a href="../../../index.html#about">CoderDojoとは</a></li>
+        <li><a href="../../../index.html#join">参加するには</a></li>
+        <li><a href="https://forms.gle/Eprh64LG7AdSkBYr6" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <header class="project-hero">
+      <div class="project-inner">
+        <div class="project-kicker">Michishirube Event App</div>
+        <h1>ミチシルベ公式イベントアプリ</h1>
+        <p>2025年度のプロジェクトチームが、ミチシルベイベントで使う公式イベントアプリの開発に取り組みました。チームで役割を分担し、公開アプリと関連資料を整備しました。</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="project-band">
+        <div class="project-inner">
+          <nav class="project-breadcrumbs"><a href="../../../index.html">Top</a> &gt; <a href="../../index.html">浦添市デジタル人材育成事業</a> &gt; <a href="../index.html">2025年度</a> &gt; ミチシルベ公式イベントアプリ</nav>
+          <h2 class="project-title">プロジェクトチーム</h2>
+          <p class="project-lead">Google Sitesで公開されているプロジェクト情報をもとに、チームメンバーと公開成果物への導線を整理しています。</p>
+          <div class="member-grid">
+            <article class="member-card"><picture><source srcset="../images/project/kengo.webp" type="image/webp"><img src="../images/project/kengo.jpg" alt="KENGOのプロフィール画像" loading="lazy"></picture><div class="member-body"><span>Project Member</span><h2>KENGO</h2><p>イベントアプリ開発プロジェクトメンバー</p></div></article>
+            <article class="member-card"><picture><source srcset="../images/project/yuma.webp" type="image/webp"><img src="../images/project/yuma.jpg" alt="YUMAのプロフィール画像" loading="lazy"></picture><div class="member-body"><span>Project Member</span><h2>YUMA</h2><p>イベントアプリ開発プロジェクトメンバー</p></div></article>
+            <article class="member-card"><picture><source srcset="../images/project/yui.webp" type="image/webp"><img src="../images/project/yui.jpg" alt="YUIのプロフィール画像" loading="lazy"></picture><div class="member-body"><span>Project Member</span><h2>YUI</h2><p>イベントアプリ開発プロジェクトメンバー</p></div></article>
+            <article class="member-card"><picture><source srcset="../images/project/aki.webp" type="image/webp"><img src="../images/project/aki.jpg" alt="AKIのプロフィール画像" loading="lazy"></picture><div class="member-body"><span>Project Member</span><h2>AKI</h2><p>イベントアプリ開発プロジェクトメンバー</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-band bg-light">
+        <div class="project-inner">
+          <h2 class="project-title">成果物・関連リンク</h2>
+          <p class="project-lead">公開アプリ、別チームのアプリ、関連資料へのリンクをまとめています。アカウント情報やパスワードは掲載しません。</p>
+          <div class="link-grid">
+            <article class="project-card"><span>Application</span><h2>ミチシルベ公式イベントアプリ</h2><p><a href="https://michishirube2026.netlify.app/" target="_blank" rel="noopener noreferrer">https://michishirube2026.netlify.app/</a></p></article>
+            <article class="project-card"><span>Application</span><h2>別の中学生チーム作アプリ</h2><p><a href="https://michishirube-app-5449324-b969b.web.app/" target="_blank" rel="noopener noreferrer">https://michishirube-app-5449324-b969b.web.app/</a></p></article>
+            <article class="project-card"><span>Repository</span><h2>GitHubリポジトリ</h2><p>Google Sites上では <code>git@github.com:stacra-yamaguchi/event-app.git</code> として掲載されています。</p></article>
+            <article class="project-card"><span>Service</span><h2>Supabase</h2><p><a href="https://supabase.com/" target="_blank" rel="noopener noreferrer">https://supabase.com/</a></p></article>
+            <article class="project-card"><span>Document</span><h2>Backlog</h2><p><a href="https://drive.google.com/open?id=1EG8JPPjJtmoor0EcoTv_f_box6wJKDl9Pc11rqTaklo" target="_blank" rel="noopener noreferrer">Google Driveで開く</a></p></article>
+            <article class="project-card"><span>Document</span><h2>アプリ開発プロジェクト資料</h2><p><a href="https://drive.google.com/file/d/183HFaJO2V5-8StcN5IwouDTO6ORgP2tl/view?usp=drive_link" target="_blank" rel="noopener noreferrer">PDFファイルを開く</a></p></article>
+          </div>
+          <div class="note-card">
+            <p>プロジェクトページに掲載されているログイン情報・パスワード等は、安全性を考慮して本ページには転載していません。必要な場合は関係者向けの元ページで確認してください。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo"><img src="../../../img/coderdojo-logo.png" alt="CoderDojo Urasoe Logo" class="footer-brand-logo"></div>
+          <p>子どもたちのための無料プログラミングクラブ</p>
+        </div>
+        <div class="footer-bottom"><p>&copy; <span id="year"></span> CoderDojo Urasoe. All rights reserved.</p></div>
+      </div>
+    </footer>
+  </div>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>
